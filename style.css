@@ -427,3 +427,50 @@ p { margin: 0 0 1rem; color: var(--muted); }
   .visual-main { min-height: 360px; }
   .info-row, .table-row { grid-template-columns: 1fr; gap: 8px; }
 }
+/* ===== 修正：右側ビジュアルの崩れを止める ===== */
+.visual-person,
+.visual-wheelchair,
+.visual-badge,
+.visual-arch,
+.arch-shadow {
+  display: none !important;
+}
+
+.hero-visual {
+  padding: 28px !important;
+  background: linear-gradient(145deg, rgba(255,255,255,0.98), rgba(243,239,232,0.96)) !important;
+}
+
+.visual-main {
+  min-height: 520px !important;
+  border-radius: 32px !important;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.55) 16%, rgba(255,255,255,0) 30%),
+    linear-gradient(160deg, #d9ddd8 0%, #e8ebe5 40%, #f6f3ed 100%) !important;
+  overflow: hidden !important;
+}
+
+.visual-panel {
+  position: absolute !important;
+  top: 50% !important;
+  right: 50% !important;
+  transform: translate(50%, -50%) !important;
+  width: min(420px, 74%) !important;
+  padding: 34px 30px !important;
+  border-radius: 28px !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+  border: 1px solid rgba(20, 37, 54, 0.08) !important;
+  box-shadow: 0 24px 40px rgba(16, 26, 39, 0.08) !important;
+}
+
+.visual-panel strong {
+  display: block !important;
+  font-size: 2rem !important;
+  line-height: 1.6 !important;
+  color: #142536 !important;
+  margin-bottom: 18px !important;
+}
+
+.visual-panel .small {
+  font-size: 1.06rem !important;
+  line-height: 2 !important;
