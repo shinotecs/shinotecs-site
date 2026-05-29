@@ -1,1 +1,0 @@
-# shinotecs-site
