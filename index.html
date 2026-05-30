@@ -10,852 +10,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&display=swap" rel="stylesheet">
 
-  <style>
-    /* ========== Reset & Base ========== */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 80px; }
-    img { max-width: 100%; height: auto; display: block; }
-    a { color: inherit; text-decoration: none; }
-    button { font-family: inherit; cursor: pointer; border: none; background: none; }
-
-    :root {
-      --bg: #FAF7F2;
-      --bg-card: #FFFFFF;
-      --bg-soft: #F3EFE6;
-      --ink: #0F172A;
-      --ink-soft: #1F2937;
-      --muted: #6B6B66;
-      --muted-light: #A39B8E;
-      --line: #E5DFD2;
-      --line-soft: #EFEAE0;
-      --accent: #8B6B47;
-      --accent-soft: #BEA688;
-
-      --font-jp-display: 'Shippori Mincho B1', 'Noto Serif JP', serif;
-      --font-jp: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif;
-      --font-lt: 'Fraunces', 'Shippori Mincho B1', serif;
-
-      --max-w: 1240px;
-      --pad-x: clamp(20px, 5vw, 64px);
-    }
-
-    body {
-      font-family: var(--font-jp);
-      background: var(--bg);
-      color: var(--ink-soft);
-      font-size: 15px;
-      line-height: 1.85;
-      font-weight: 400;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad-x); }
-
-    /* ========== Eyebrow ========== */
-    .eyebrow {
-      font-family: var(--font-lt);
-      font-style: italic;
-      font-size: 12.5px;
-      font-weight: 400;
-      letter-spacing: 0.08em;
-      color: var(--accent);
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .eyebrow::before {
-      content: "";
-      width: 28px;
-      height: 1px;
-      background: var(--accent);
-    }
-
-    /* ========== Header ========== */
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(250, 247, 242, 0.85);
-      backdrop-filter: saturate(140%) blur(12px);
-      -webkit-backdrop-filter: saturate(140%) blur(12px);
-      border-bottom: 1px solid var(--line-soft);
-    }
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 72px;
-    }
-    .logo {
-      font-family: var(--font-lt);
-      font-weight: 500;
-      font-size: 16px;
-      letter-spacing: 0.12em;
-      color: var(--ink);
-    }
-    .logo small {
-      display: block;
-      font-family: var(--font-lt);
-      font-size: 9.5px;
-      letter-spacing: 0.22em;
-      color: var(--muted);
-      margin-top: 2px;
-      font-weight: 400;
-      font-style: italic;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: 13.5px;
-      color: var(--ink-soft);
-      font-weight: 500;
-      position: relative;
-      padding: 6px 0;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--accent); }
-    .nav-cta {
-      background: var(--ink);
-      color: var(--bg);
-      padding: 10px 22px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      transition: background 0.2s;
-    }
-    .nav-cta:hover { background: var(--accent); color: var(--bg-card); }
-    .nav-toggle {
-      display: none;
-      width: 40px;
-      height: 40px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      font-size: 14px;
-      color: var(--ink);
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* Mobile drawer */
-    .nav-drawer {
-      position: fixed;
-      inset: 0;
-      background: var(--bg);
-      z-index: 99;
-      transform: translateY(-100%);
-      transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
-      display: flex;
-      flex-direction: column;
-      padding: 96px var(--pad-x) 40px;
-    }
-    .nav-drawer.open { transform: translateY(0); }
-    .nav-drawer ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .nav-drawer a {
-      display: block;
-      padding: 14px 0;
-      font-family: var(--font-jp-display);
-      font-size: 22px;
-      color: var(--ink);
-      border-bottom: 1px solid var(--line-soft);
-    }
-    .nav-drawer .nav-drawer-cta {
-      margin-top: 32px;
-      display: inline-flex;
-      align-self: flex-start;
-      background: var(--ink);
-      color: var(--bg);
-      padding: 14px 28px;
-      border-radius: 999px;
-      font-family: var(--font-jp);
-      font-size: 14px;
-      font-weight: 500;
-      border-bottom: none;
-    }
-
-    /* ========== Image placeholders ========== */
-    .img-slot {
-      background: var(--bg-soft);
-      border: 1px dashed var(--line);
-      border-radius: 4px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 8px;
-      overflow: hidden;
-      color: var(--muted-light);
-    }
-    .img-slot::before {
-      content: "";
-      position: absolute;
-      inset: 14px;
-      border: 1px solid var(--line);
-      border-radius: 2px;
-      pointer-events: none;
-    }
-    .img-slot__label {
-      font-family: var(--font-lt);
-      font-style: italic;
-      font-size: 12px;
-      letter-spacing: 0.12em;
-      font-weight: 400;
-      color: var(--muted);
-    }
-    .img-slot__hint {
-      font-size: 11.5px;
-      color: var(--muted);
-      font-weight: 400;
-      text-align: center;
-      padding: 0 24px;
-      max-width: 320px;
-      line-height: 1.6;
-    }
-
-    /* ========== Hero ========== */
-    .hero {
-      padding: 96px 0 104px;
-      position: relative;
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 1fr;
-      gap: clamp(32px, 6vw, 80px);
-      align-items: center;
-    }
-    .hero-text { animation: fadeUp 1s ease-out 0.1s backwards; }
-    .hero h1 {
-      font-family: var(--font-jp-display);
-      font-weight: 500;
-      font-size: clamp(34px, 5vw, 56px);
-      line-height: 1.32;
-      letter-spacing: 0.01em;
-      color: var(--ink);
-      margin: 24px 0 28px;
-    }
-    .hero h1 .accent { color: var(--accent); }
-    .hero p.lead {
-      font-size: 15px;
-      line-height: 2;
-      color: var(--muted);
-      max-width: 480px;
-      margin-bottom: 40px;
-    }
-    .hero-ctas {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 28px;
-      border-radius: 999px;
-      font-size: 13.5px;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      transition: all 0.25s ease;
-    }
-    .btn-primary {
-      background: var(--ink);
-      color: var(--bg);
-    }
-    .btn-primary:hover {
-      background: var(--accent);
-      transform: translateY(-1px);
-    }
-    .btn-secondary {
-      background: transparent;
-      border: 1px solid var(--line);
-      color: var(--ink);
-    }
-    .btn-secondary:hover { border-color: var(--ink); }
-    .btn .arrow {
-      display: inline-block;
-      transition: transform 0.25s;
-    }
-    .btn:hover .arrow { transform: translateX(4px); }
-
-    .hero-visual { animation: fadeUp 1.1s ease-out 0.3s backwards; }
-    .hero-visual .img-slot { aspect-ratio: 4 / 5; }
-
-    /* ========== Section frame ========== */
-    .section { padding: clamp(80px, 11vw, 140px) 0; }
-    .section-head {
-      max-width: 720px;
-      margin-bottom: 64px;
-    }
-    .section-head h2 {
-      font-family: var(--font-jp-display);
-      font-weight: 500;
-      font-size: clamp(26px, 3.4vw, 38px);
-      line-height: 1.4;
-      letter-spacing: 0.01em;
-      color: var(--ink);
-      margin: 18px 0 20px;
-    }
-    .section-head p {
-      font-size: 14.5px;
-      color: var(--muted);
-      line-height: 2;
-    }
-
-    /* ========== Services ========== */
-    .services { background: var(--bg); }
-    .service-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-    }
-    .service-card {
-      background: var(--bg-card);
-      padding: 40px;
-      border-radius: 8px;
-      border: 1px solid var(--line-soft);
-      display: flex;
-      flex-direction: column;
-      transition: border-color 0.3s, transform 0.3s;
-    }
-    .service-card:hover {
-      border-color: var(--line);
-      transform: translateY(-2px);
-    }
-    .service-card .img-slot {
-      aspect-ratio: 16 / 10;
-      margin-bottom: 32px;
-    }
-    .service-num {
-      font-family: var(--font-lt);
-      font-style: italic;
-      font-size: 14px;
-      font-weight: 400;
-      color: var(--accent);
-      letter-spacing: 0.05em;
-      margin-bottom: 12px;
-    }
-    .service-card h3 {
-      font-family: var(--font-jp-display);
-      font-weight: 500;
-      font-size: 26px;
-      letter-spacing: 0.02em;
-      color: var(--ink);
-      margin-bottom: 20px;
-      line-height: 1.4;
-    }
-    .service-card .desc {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 2;
-      margin-bottom: 28px;
-    }
-    .service-includes {
-      padding: 24px 0 20px;
-      border-top: 1px solid var(--line-soft);
-      margin-top: auto;
-    }
-    .service-includes-title {
-      font-family: var(--font-lt);
-      font-style: italic;
-      font-size: 12px;
-      font-weight: 400;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-      margin-bottom: 14px;
-    }
-    .includes-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .includes-list li {
-      font-size: 13.5px;
-      color: var(--ink-soft);
-      padding-left: 18px;
-      position: relative;
-      line-height: 1.7;
-    }
-    .includes-list li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 11px;
-      width: 8px;
-      height: 1px;
-      background: var(--accent);
-    }
-    .service-meta {
-      margin-top: 24px;
-      padding-top: 20px;
-      border-top: 1px solid var(--line-soft);
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      font-size: 12px;
-      gap: 16px;
-    }
-    .service-meta-label {
-      color: var(--muted);
-      font-weight: 400;
-    }
-    .service-meta-num {
-      font-family: var(--font-lt);
-      color: var(--ink);
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      font-variant-numeric: tabular-nums;
-      white-space: nowrap;
-    }
-    .service-note {
-      font-size: 12px;
-      color: var(--accent);
-      margin-top: 12px;
-      font-style: italic;
-      font-family: var(--font-jp-display);
-    }
-
-    /* ========== Flow ========== */
-    .flow { background: var(--bg-soft); }
-    .flow-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      position: relative;
-    }
-    .flow-step {
-      padding: 32px 0 0;
-      border-top: 1px solid var(--ink);
-      position: relative;
-    }
-    .flow-step-num {
-      font-family: var(--font-lt);
-      font-style: italic;
-      font-size: 13px;
-      color: var(--muted);
-      letter-spacing: 0.05em;
-      margin-bottom: 14px;
-      font-weight: 400;
-    }
-    .flow-step h4 {
-      font-family: var(--font-jp);
-      font-weight: 500;
-      font-size: 16.5px;
-      color: var(--ink);
-      margin-bottom: 12px;
-    }
-    .flow-step p {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.85;
-    }
-
-    /* ========== Recruit ========== */
-    .recruit {
-      background: var(--ink);
-      color: var(--bg);
-    }
-    .recruit-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.1fr;
-      gap: clamp(40px, 7vw, 96px);
-      align-items: center;
-    }
-    .recruit-visual .img-slot {
-      aspect-ratio: 4 / 5;
-      background: rgba(255, 255, 255, 0.04);
-      border-color: rgba(255, 255, 255, 0.12);
-      color: rgba(255, 255, 255, 0.4);
-    }
-    .recruit-visual .img-slot::before {
-      border-color: rgba(255, 255, 255, 0.08);
-    }
-    .recruit-visual .img-slot__hint,
-    .recruit-visual .img-slot__label {
-      color: rgba(255, 255, 255, 0.5);
-    }
-    .recruit .eyebrow { color: var(--accent-soft); }
-    .recruit .eyebrow::before { background: var(--accent-soft); }
-    .recruit h2 {
-      font-family: var(--font-jp-display);
-      font-weight: 400;
-      font-size: clamp(28px, 3.8vw, 44px);
-      line-height: 1.45;
-      letter-spacing: 0.02em;
-      margin: 22px 0 28px;
-      color: var(--bg);
-    }
-    .recruit p.lead {
-      font-size: 14.5px;
-      color: rgba(250, 247, 242, 0.7);
-      line-height: 2.05;
-      margin-bottom: 40px;
-      max-width: 480px;
-    }
-    .recruit-roles {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-bottom: 44px;
-      padding: 28px 0;
-      border-top: 1px solid rgba(255,255,255,0.12);
-      border-bottom: 1px solid rgba(255,255,255,0.12);
-    }
-    .role-item {
-      font-size: 13px;
-      color: rgba(250, 247, 242, 0.85);
-      line-height: 1.7;
-    }
-    .role-item-num {
-      font-family: var(--font-lt);
-      font-style: italic;
-      font-size: 12px;
-      color: var(--accent-soft);
-      letter-spacing: 0.05em;
-      display: block;
-      margin-bottom: 6px;
-    }
-    .recruit-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px 40px;
-      margin-bottom: 32px;
-      padding-bottom: 28px;
-      border-bottom: 1px solid rgba(255,255,255,0.12);
-    }
-    .recruit-meta-item {
-      font-size: 12.5px;
-      color: rgba(250, 247, 242, 0.7);
-    }
-    .recruit-meta-item strong {
-      font-family: var(--font-lt);
-      display: block;
-      font-size: 18px;
-      color: var(--bg);
-      font-weight: 400;
-      letter-spacing: 0.02em;
-      margin-top: 4px;
-      font-variant-numeric: tabular-nums;
-    }
-    .recruit .btn-primary {
-      background: var(--bg);
-      color: var(--ink);
-    }
-    .recruit .btn-primary:hover { background: var(--accent-soft); }
-    .recruit .btn-secondary {
-      border-color: rgba(255,255,255,0.2);
-      color: var(--bg);
-    }
-    .recruit .btn-secondary:hover { border-color: var(--bg); }
-
-    /* ========== Access ========== */
-    .access { background: var(--bg); }
-    .access-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: clamp(32px, 6vw, 80px);
-      align-items: stretch;
-    }
-    .access-map {
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid var(--line-soft);
-      min-height: 420px;
-      position: relative;
-    }
-    .access-map iframe {
-      width: 100%;
-      height: 100%;
-      min-height: 420px;
-      border: 0;
-      display: block;
-      filter: saturate(0.85) contrast(0.95);
-    }
-    .access-info-list { list-style: none; }
-    .access-info-list li {
-      padding: 22px 0;
-      border-bottom: 1px solid var(--line-soft);
-    }
-    .access-info-list li:last-child { border-bottom: none; }
-    .access-info-list .label {
-      font-family: var(--font-lt);
-      font-style: italic;
-      font-size: 12px;
-      color: var(--muted);
-      letter-spacing: 0.05em;
-      margin-bottom: 8px;
-      display: block;
-    }
-    .access-info-list .value {
-      font-size: 14px;
-      color: var(--ink);
-      line-height: 1.85;
-    }
-    .access-info-list .value strong {
-      font-weight: 500;
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    /* ========== Contact ========== */
-    .contact { background: var(--bg-soft); }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: clamp(32px, 6vw, 80px);
-      align-items: start;
-    }
-    .contact-cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 12px;
-    }
-    .contact-card {
-      background: var(--bg-card);
-      padding: 24px;
-      border-radius: 8px;
-      border: 1px solid var(--line-soft);
-    }
-    .contact-card-label {
-      font-family: var(--font-lt);
-      font-style: italic;
-      font-size: 12px;
-      color: var(--accent);
-      letter-spacing: 0.05em;
-      margin-bottom: 10px;
-    }
-    .contact-card-value {
-      font-family: var(--font-lt);
-      font-size: 20px;
-      font-weight: 400;
-      color: var(--ink);
-      letter-spacing: 0.01em;
-      font-variant-numeric: tabular-nums;
-      margin-bottom: 6px;
-      word-break: break-all;
-    }
-    .contact-card-note {
-      font-size: 11.5px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-    .contact-hours {
-      grid-column: 1 / -1;
-      background: var(--ink);
-      color: var(--bg);
-      padding: 22px 26px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-    .contact-hours-label {
-      font-family: var(--font-lt);
-      font-style: italic;
-      font-size: 12px;
-      color: var(--accent-soft);
-      letter-spacing: 0.05em;
-      margin-bottom: 4px;
-    }
-    .contact-hours-value {
-      font-size: 14.5px;
-      line-height: 1.6;
-    }
-
-    /* ========== Company info ========== */
-    .company { background: var(--bg); }
-    .company-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: clamp(32px, 6vw, 80px);
-    }
-    .company-grid h2 {
-      font-family: var(--font-jp-display);
-      font-weight: 500;
-      font-size: clamp(26px, 3.4vw, 38px);
-      line-height: 1.4;
-      letter-spacing: 0.01em;
-      color: var(--ink);
-      margin-top: 18px;
-    }
-    .company-mission {
-      font-family: var(--font-jp-display);
-      font-size: 15.5px;
-      line-height: 2.1;
-      color: var(--ink-soft);
-      margin-top: 24px;
-      padding-top: 24px;
-      border-top: 1px solid var(--line-soft);
-      max-width: 360px;
-    }
-    .company-info-list { list-style: none; }
-    .company-info-list li {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 24px;
-      padding: 20px 0;
-      border-bottom: 1px solid var(--line-soft);
-      font-size: 14px;
-    }
-    .company-info-list li:last-child { border-bottom: none; }
-    .company-info-list .label {
-      color: var(--muted);
-      font-size: 12.5px;
-      font-weight: 500;
-      letter-spacing: 0.05em;
-    }
-    .company-info-list .value {
-      color: var(--ink-soft);
-      line-height: 1.85;
-    }
-    .company-info-list .value-num {
-      font-family: var(--font-lt);
-      font-variant-numeric: tabular-nums;
-      letter-spacing: 0.02em;
-      color: var(--ink);
-    }
-
-    /* ========== Footer ========== */
-    footer {
-      background: var(--ink);
-      color: rgba(250, 247, 242, 0.7);
-      padding: 80px 0 32px;
-      font-size: 13px;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr 1.1fr;
-      gap: 48px;
-      padding-bottom: 56px;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    .footer-brand .logo { color: var(--bg); }
-    .footer-brand .logo small { color: rgba(250,247,242,0.5); }
-    .footer-brand p {
-      margin-top: 20px;
-      max-width: 320px;
-      font-size: 12.5px;
-      line-height: 1.95;
-      color: rgba(250,247,242,0.55);
-    }
-    .footer-col h5 {
-      font-family: var(--font-lt);
-      font-style: italic;
-      font-size: 13px;
-      font-weight: 400;
-      letter-spacing: 0.05em;
-      color: rgba(250,247,242,0.5);
-      margin-bottom: 20px;
-    }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-    .footer-col li, .footer-col a {
-      font-size: 13px;
-      color: rgba(250,247,242,0.8);
-      transition: color 0.2s;
-      line-height: 1.7;
-    }
-    .footer-col a:hover { color: var(--accent-soft); }
-    .footer-col .small {
-      font-family: var(--font-lt);
-      font-size: 12px;
-      color: rgba(250,247,242,0.55);
-      letter-spacing: 0.03em;
-      margin-top: 2px;
-      display: block;
-      font-variant-numeric: tabular-nums;
-    }
-    .footer-bottom {
-      padding-top: 28px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 12px;
-      color: rgba(250,247,242,0.4);
-      letter-spacing: 0.05em;
-    }
-    .footer-bottom .footer-mark {
-      font-family: var(--font-lt);
-      font-style: italic;
-    }
-
-    /* ========== Animations ========== */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.9s ease, transform 0.9s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ========== Responsive ========== */
-    @media (max-width: 960px) {
-      .hero { padding: 56px 0 64px; }
-      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-      .hero-visual .img-slot { aspect-ratio: 4 / 3; }
-      .service-grid { grid-template-columns: 1fr; gap: 20px; }
-      .service-card { padding: 28px; }
-      .flow-grid { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
-      .recruit-grid { grid-template-columns: 1fr; gap: 36px; }
-      .recruit-visual .img-slot { aspect-ratio: 4 / 3; }
-      .recruit-roles { grid-template-columns: 1fr; }
-      .access-grid { grid-template-columns: 1fr; }
-      .access-map { min-height: 320px; }
-      .access-map iframe { min-height: 320px; }
-      .contact-grid { grid-template-columns: 1fr; }
-      .contact-cards { grid-template-columns: 1fr 1fr; }
-      .contact-hours { flex-direction: column; align-items: flex-start; }
-      .company-grid { grid-template-columns: 1fr; gap: 32px; }
-      .company-mission { max-width: none; }
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; padding-bottom: 36px; }
-      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
-
-      .nav-links, .nav-cta { display: none; }
-      .nav-toggle { display: inline-flex; }
-    }
-    @media (max-width: 560px) {
-      .flow-grid { grid-template-columns: 1fr; }
-      .contact-cards { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .company-info-list li { grid-template-columns: 96px 1fr; gap: 16px; padding: 18px 0; }
-      .hero h1 { font-size: 32px; }
-      .hero p.lead { font-size: 14.5px; }
-      .nav { height: 60px; }
-      .recruit-meta { gap: 18px 28px; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ============================================
-       Header
-       ============================================ -->
+  <!-- Header -->
   <header class="site-header">
     <div class="container nav">
-      <a href="#top" class="logo">
+      <a href="index.html" class="logo">
         SHINOTECS
         <small>Care &amp; Support</small>
       </a>
       <ul class="nav-links">
         <li><a href="#services">事業</a></li>
-        <li><a href="#flow">ご利用の流れ</a></li>
         <li><a href="#recruit">採用</a></li>
         <li><a href="#access">アクセス</a></li>
         <li><a href="#company">会社概要</a></li>
@@ -869,7 +36,6 @@
   <nav class="nav-drawer" id="navDrawer" aria-hidden="true">
     <ul>
       <li><a href="#services" data-close>事業</a></li>
-      <li><a href="#flow" data-close>ご利用の流れ</a></li>
       <li><a href="#recruit" data-close>採用</a></li>
       <li><a href="#access" data-close>アクセス</a></li>
       <li><a href="#company" data-close>会社概要</a></li>
@@ -877,9 +43,7 @@
     <a href="#contact" class="nav-drawer-cta" data-close>お問い合わせ</a>
   </nav>
 
-  <!-- ============================================
-       Hero
-       ============================================ -->
+  <!-- Hero -->
   <section class="hero" id="top">
     <div class="container hero-grid">
       <div class="hero-text">
@@ -905,7 +69,7 @@
       </div>
 
       <div class="hero-visual">
-        <!-- 画像差し替え方法: 下の <div> 全体を <img src="images/hero.jpg" alt="..." style="aspect-ratio: 4/5; object-fit: cover; width: 100%;" /> に置き換え -->
+        <!-- 画像差し替え: 下の <div> 全体を <img src="images/hero.jpg" alt="..." style="aspect-ratio: 4/5; object-fit: cover; width: 100%;" /> に -->
         <div class="img-slot" data-image="hero">
           <span class="img-slot__label">Hero Image</span>
           <span class="img-slot__hint">
@@ -917,9 +81,7 @@
     </div>
   </section>
 
-  <!-- ============================================
-       Services
-       ============================================ -->
+  <!-- Services (2 pillars with links to detail pages) -->
   <section class="section services" id="services">
     <div class="container">
       <div class="section-head reveal">
@@ -946,18 +108,16 @@
           <p class="service-num">01 — Welfare Equipment</p>
           <h3>福祉用具事業</h3>
           <p class="desc">
-            福祉用具貸与事業所「シノテクス株式会社」では、車いす、特殊寝台、歩行器などの福祉用具のレンタルから、入浴補助用具などの販売まで対応しています。
-            さらに高度管理医療機器の販売・賃貸、住宅改修のご相談まで含め、日々の生活を多面的に支えるご提案を行っています。
+            車いす、特殊寝台、歩行器などの福祉用具のレンタル・販売から、
+            高度管理医療機器の販売・賃貸、住宅改修のご相談まで、
+            日々の生活を多面的に支えるご提案を行っています。
           </p>
 
-          <div class="service-includes">
-            <p class="service-includes-title">Included Services</p>
-            <ul class="includes-list">
-              <li>福祉用具の貸与・販売</li>
-              <li>高度管理医療機器の販売・賃貸</li>
-              <li>住宅改修(手すり設置・段差解消ほか)</li>
-              <li>中古福祉用具の取扱い</li>
-            </ul>
+          <div class="service-card-cta">
+            <a href="welfare.html" class="service-card-link">
+              福祉用具事業の詳細を見る
+              <span class="arrow">→</span>
+            </a>
           </div>
 
           <div class="service-meta">
@@ -980,21 +140,17 @@
           <p class="service-num">02 — Care Management</p>
           <h3>居宅介護支援事業</h3>
           <p class="desc">
-            居宅介護支援事業所「ピオ」は、介護保険サービスを通じて、ご自宅で安心して暮らせるよう支援します。
-            ご希望や生活状況に合わせて必要な介護保険サービスを一緒に考え、医療機関や事業所と連携しながら、円滑な支援体制を整えてまいります。
+            居宅介護支援事業所「ピオ」は、介護保険サービスを通じて、
+            ご自宅で安心して暮らせるよう支援します。
+            ご希望や生活状況に合わせて、必要なサービスを一緒に考えます。
           </p>
 
-          <div class="service-includes">
-            <p class="service-includes-title">Included Services</p>
-            <ul class="includes-list">
-              <li>ケアプラン(居宅サービス計画)の作成</li>
-              <li>サービス事業者との連絡・調整</li>
-              <li>定期的なサービス内容の見直し</li>
-              <li>関係各機関との連携支援</li>
-            </ul>
+          <div class="service-card-cta">
+            <a href="pio.html" class="service-card-link">
+              居宅介護支援事業の詳細を見る
+              <span class="arrow">→</span>
+            </a>
           </div>
-
-          <p class="service-note">「ピオ」は、うさぎがこちらへ歩み寄る音を造語したものです。</p>
 
           <div class="service-meta">
             <span class="service-meta-label">居宅介護支援事業所<br>「ピオ」</span>
@@ -1005,48 +161,7 @@
     </div>
   </section>
 
-  <!-- ============================================
-       Flow
-       ============================================ -->
-  <section class="section flow" id="flow">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">For First Consultation</span>
-        <h2>初めての方にも、<br>分かりやすく。</h2>
-        <p>
-          介護が必要になったとき、何から始めればよいのか分からない。
-          そうした不安に対して、流れを分かりやすくご案内し、必要な支援につなげます。
-        </p>
-      </div>
-
-      <div class="flow-grid">
-        <div class="flow-step reveal">
-          <p class="flow-step-num">Step 01</p>
-          <h4>お問い合わせ</h4>
-          <p>お電話・FAX・メールから、お気軽にご相談ください。</p>
-        </div>
-        <div class="flow-step reveal">
-          <p class="flow-step-num">Step 02</p>
-          <h4>ご相談・状況確認</h4>
-          <p>生活状況やご希望を確認し、必要な支援の方向性を整理します。</p>
-        </div>
-        <div class="flow-step reveal">
-          <p class="flow-step-num">Step 03</p>
-          <h4>ご提案・ご契約</h4>
-          <p>内容を分かりやすくご説明し、ご納得いただいたうえで手続きを進めます。</p>
-        </div>
-        <div class="flow-step reveal">
-          <p class="flow-step-num">Step 04</p>
-          <h4>ご利用開始</h4>
-          <p>開始後も状況に応じた見直しや調整を行い、継続して支援を続けます。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================
-       Recruit
-       ============================================ -->
+  <!-- Recruit -->
   <section class="section recruit" id="recruit">
     <div class="container">
       <div class="recruit-grid">
@@ -1075,12 +190,12 @@
 
           <div class="recruit-meta">
             <div class="recruit-meta-item">
-              月給
-              <strong>205,000円 – 268,000円</strong>
-            </div>
-            <div class="recruit-meta-item">
               勤務時間
               <strong>平日 9:00 – 18:00</strong>
+            </div>
+            <div class="recruit-meta-item">
+              休日
+              <strong>土曜・日曜・祝日</strong>
             </div>
           </div>
 
@@ -1113,9 +228,7 @@
     </div>
   </section>
 
-  <!-- ============================================
-       Access
-       ============================================ -->
+  <!-- Access -->
   <section class="section access" id="access">
     <div class="container">
       <div class="section-head reveal">
@@ -1166,9 +279,7 @@
     </div>
   </section>
 
-  <!-- ============================================
-       Contact
-       ============================================ -->
+  <!-- Contact -->
   <section class="section contact" id="contact">
     <div class="container">
       <div class="contact-grid">
@@ -1194,7 +305,7 @@
           </div>
           <div class="contact-card">
             <p class="contact-card-label">E-mail</p>
-            <p class="contact-card-value" style="font-size: 15px;">info@shinotecs.com</p>
+            <p class="contact-card-value contact-card-value--email">info@shinotecs.com</p>
             <p class="contact-card-note">24時間受付・順次返信</p>
           </div>
           <div class="contact-hours">
@@ -1204,7 +315,7 @@
                 平日 9:00 – 18:00 / 土日祝休
               </p>
             </div>
-            <a href="tel:049-227-3475" class="btn btn-primary" style="background: var(--bg); color: var(--ink);">
+            <a href="tel:049-227-3475" class="btn btn-primary">
               いますぐ電話する
               <span class="arrow">→</span>
             </a>
@@ -1214,9 +325,7 @@
     </div>
   </section>
 
-  <!-- ============================================
-       Company
-       ============================================ -->
+  <!-- Company -->
   <section class="section company" id="company">
     <div class="container company-grid">
       <div class="reveal">
@@ -1289,14 +398,12 @@
     </div>
   </section>
 
-  <!-- ============================================
-       Footer
-       ============================================ -->
+  <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="#top" class="logo">
+          <a href="index.html" class="logo">
             SHINOTECS
             <small>Care &amp; Support</small>
           </a>
@@ -1309,8 +416,8 @@
         <div class="footer-col">
           <h5>Site</h5>
           <ul>
-            <li><a href="#services">事業内容</a></li>
-            <li><a href="#flow">ご利用の流れ</a></li>
+            <li><a href="welfare.html">福祉用具事業</a></li>
+            <li><a href="pio.html">居宅介護支援事業</a></li>
             <li><a href="#recruit">採用情報</a></li>
             <li><a href="#access">アクセス</a></li>
             <li><a href="#company">会社概要</a></li>
