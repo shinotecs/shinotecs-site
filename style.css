@@ -75,19 +75,33 @@ body {
   height: 72px;
 }
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--ink);
+  line-height: 1;
+}
+.logo-symbol {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: block;
+}
+.logo-text {
+  display: inline-block;
   font-family: var(--font-lt);
   font-weight: 500;
   font-size: 16px;
   letter-spacing: 0.12em;
-  color: var(--ink);
+  line-height: 1.1;
 }
-.logo small {
+.logo-text small {
   display: block;
   font-family: var(--font-lt);
   font-size: 9.5px;
   letter-spacing: 0.22em;
   color: var(--muted);
-  margin-top: 2px;
+  margin-top: 3px;
   font-weight: 400;
   font-style: italic;
 }
@@ -938,8 +952,8 @@ footer {
   padding-bottom: 56px;
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
-.footer-brand .logo { color: var(--bg); }
-.footer-brand .logo small { color: rgba(250,247,242,0.5); }
+.footer-brand .logo .logo-text { color: var(--bg); }
+.footer-brand .logo .logo-text small { color: rgba(250,247,242,0.5); }
 .footer-brand p {
   margin-top: 20px;
   max-width: 320px;
@@ -1047,4 +1061,7 @@ footer {
   .nav { height: 60px; }
   .recruit-meta { gap: 18px 28px; }
   .cta-band-tel { font-size: 24px; }
+  .logo-symbol { width: 34px; height: 34px; }
+  .logo-text { font-size: 14.5px; }
+  .logo-text small { font-size: 9px; letter-spacing: 0.18em; }
 }
