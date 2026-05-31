@@ -29,14 +29,76 @@
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&display=swap" rel="stylesheet">
 
   <link rel="icon" href="02_symbol.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#FAF7F2">
+
   <link rel="stylesheet" href="style.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://shinotecs.github.io/shinotecs-site/" },
+      { "@type": "ListItem", "position": 2, "name": "居宅介護支援事業所「ピオ」", "item": "https://shinotecs.github.io/shinotecs-site/pio.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "居宅介護支援事業所「ピオ」",
+    "alternateName": "ピオ",
+    "url": "https://shinotecs.github.io/shinotecs-site/pio.html",
+    "image": "https://shinotecs.github.io/shinotecs-site/ogp.jpg",
+    "description": "坂戸市・入間市を中心に、ケアプラン作成や関係機関との連絡調整まで、ご自宅での暮らしを丁寧に支援する居宅介護支援事業所です。",
+    "telephone": "+81-49-292-9661",
+    "faxNumber": "+81-49-292-9662",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "千代田1-1-29 第5武井ビル202",
+      "addressLocality": "坂戸市",
+      "addressRegion": "埼玉県",
+      "postalCode": "350-0214",
+      "addressCountry": "JP"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:30",
+      "closes": "17:30"
+    }],
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "シノテクス株式会社",
+      "url": "https://shinotecs.github.io/shinotecs-site/"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "坂戸市" },
+      { "@type": "City", "name": "入間市" }
+    ],
+    "identifier": {
+      "@type": "PropertyValue",
+      "name": "介護保険指定番号",
+      "value": "1176001558"
+    }
+  }
+  </script>
 </head>
 <body>
 
+  <!-- Skip to main content (for accessibility) -->
+  <a href="#main" class="skip-link">メインコンテンツへスキップ</a>
+
   <!-- Header -->
-  <header class="site-header">
-    <div class="container nav">
-      <a href="index.html" class="logo">
+  <header class="site-header" role="banner">
+    <div class="container nav" role="navigation" aria-label="メインメニュー">
+      <a href="index.html" class="logo" aria-label="シノテクス株式会社 ホームへ">
         <img src="02_symbol.svg" alt="" class="logo-symbol">
         <span class="logo-text">
           SHINOTECS
@@ -50,12 +112,12 @@
         <li><a href="index.html#company">会社概要</a></li>
       </ul>
       <a href="index.html#contact" class="nav-cta">お問い合わせ</a>
-      <button class="nav-toggle" id="navToggle" aria-label="メニューを開く">≡</button>
+      <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="navDrawer">≡</button>
     </div>
   </header>
 
   <!-- Mobile drawer -->
-  <nav class="nav-drawer" id="navDrawer" aria-hidden="true">
+  <nav class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="モバイルメニュー">
     <ul>
       <li><a href="index.html#services" data-close>事業</a></li>
       <li><a href="index.html#recruit" data-close>採用</a></li>
@@ -64,6 +126,8 @@
     </ul>
     <a href="index.html#contact" class="nav-drawer-cta" data-close>お問い合わせ</a>
   </nav>
+
+  <main id="main">
 
   <!-- Page Hero -->
   <section class="page-hero">
@@ -261,8 +325,10 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
-  <footer>
+  <footer role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">

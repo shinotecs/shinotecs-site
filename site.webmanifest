@@ -1,0 +1,23 @@
+{
+  "name": "シノテクス株式会社",
+  "short_name": "SHINOTECS",
+  "description": "埼玉県坂戸市の介護福祉会社。福祉用具のレンタル・販売、居宅介護支援。",
+  "icons": [
+    {
+      "src": "android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#FAF7F2",
+  "background_color": "#FAF7F2",
+  "display": "standalone",
+  "start_url": "/shinotecs-site/",
+  "scope": "/shinotecs-site/",
+  "lang": "ja"
+}

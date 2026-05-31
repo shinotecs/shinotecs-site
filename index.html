@@ -29,14 +29,77 @@
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&display=swap" rel="stylesheet">
 
   <link rel="icon" href="02_symbol.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#FAF7F2">
+
   <link rel="stylesheet" href="style.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://shinotecs.github.io/shinotecs-site/#organization",
+    "name": "シノテクス株式会社",
+    "alternateName": "SHINOTECS",
+    "url": "https://shinotecs.github.io/shinotecs-site/",
+    "logo": "https://shinotecs.github.io/shinotecs-site/02_symbol.svg",
+    "image": "https://shinotecs.github.io/shinotecs-site/ogp.jpg",
+    "description": "シノテクス株式会社は、福祉用具のレンタル・販売から居宅介護支援まで、地域の医療・福祉・保健の分野を通し、地域社会の貢献と発展を目指します。",
+    "telephone": "+81-49-227-3475",
+    "faxNumber": "+81-49-227-3476",
+    "email": "info@shinotecs.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "千代田1-1-29 第5武井ビル202",
+      "addressLocality": "坂戸市",
+      "addressRegion": "埼玉県",
+      "postalCode": "350-0214",
+      "addressCountry": "JP"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 35.9568827,
+      "longitude": 139.4771127
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    }],
+    "foundingDate": "2014-03-12",
+    "founder": {
+      "@type": "Person",
+      "name": "篠 裕介"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "坂戸市" },
+      { "@type": "City", "name": "入間市" },
+      { "@type": "AdministrativeArea", "name": "埼玉県" }
+    ],
+    "knowsAbout": ["福祉用具レンタル", "福祉用具販売", "居宅介護支援", "ケアマネジメント", "住宅改修", "介護保険サービス"],
+    "sameAs": ["https://shinotecs.jbplt.jp/"],
+    "identifier": [
+      { "@type": "PropertyValue", "name": "法人番号", "value": "3030001101956" },
+      { "@type": "PropertyValue", "name": "福祉用具貸与事業所", "value": "1176001020" },
+      { "@type": "PropertyValue", "name": "居宅介護支援事業所", "value": "1176001558" }
+    ]
+  }
+  </script>
 </head>
 <body>
 
+  <!-- Skip to main content (for accessibility) -->
+  <a href="#main" class="skip-link">メインコンテンツへスキップ</a>
+
   <!-- Header -->
-  <header class="site-header">
-    <div class="container nav">
-      <a href="index.html" class="logo">
+  <header class="site-header" role="banner">
+    <div class="container nav" role="navigation" aria-label="メインメニュー">
+      <a href="index.html" class="logo" aria-label="シノテクス株式会社 ホームへ">
         <img src="02_symbol.svg" alt="" class="logo-symbol">
         <span class="logo-text">
           SHINOTECS
@@ -50,12 +113,12 @@
         <li><a href="#company">会社概要</a></li>
       </ul>
       <a href="#contact" class="nav-cta">お問い合わせ</a>
-      <button class="nav-toggle" id="navToggle" aria-label="メニューを開く">≡</button>
+      <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="navDrawer">≡</button>
     </div>
   </header>
 
   <!-- Mobile drawer -->
-  <nav class="nav-drawer" id="navDrawer" aria-hidden="true">
+  <nav class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="モバイルメニュー">
     <ul>
       <li><a href="#services" data-close>事業</a></li>
       <li><a href="#recruit" data-close>採用</a></li>
@@ -64,6 +127,8 @@
     </ul>
     <a href="#contact" class="nav-drawer-cta" data-close>お問い合わせ</a>
   </nav>
+
+  <main id="main">
 
   <!-- Hero -->
   <section class="hero" id="top">
@@ -392,8 +457,10 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
-  <footer>
+  <footer role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
@@ -490,6 +557,8 @@
       toggle.addEventListener('click', () => {
         const open = drawer.classList.toggle('open');
         drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
         toggle.textContent = open ? '×' : '≡';
         document.body.style.overflow = open ? 'hidden' : '';
       });
@@ -497,6 +566,8 @@
         el.addEventListener('click', () => {
           drawer.classList.remove('open');
           drawer.setAttribute('aria-hidden', 'true');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.setAttribute('aria-label', 'メニューを開く');
           toggle.textContent = '≡';
           document.body.style.overflow = '';
         });

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shinotecs.github.io/shinotecs-site/sitemap.xml
