@@ -258,6 +258,507 @@
     </div>
   </section>
 
+  <!-- Equipment List (Rental / Purchase / Home Modification) -->
+  <section class="section equipment-section" id="equipment-list" aria-labelledby="eq-list-heading">
+    <div class="container">
+
+      <!-- Section intro -->
+      <div class="eq-intro reveal">
+        <span class="eyebrow">— Equipment List</span>
+        <h2 class="eq-intro-heading">取り扱う品目一覧</h2>
+        <p class="eq-intro-desc">
+          シノテクスでは、介護保険でレンタル可能な<strong>福祉用具13品目</strong>、購入対象の<strong>特定福祉用具6品目</strong>、
+          そして<strong>住宅改修6種類</strong>に対応しています。各カテゴリーの具体的な品目は以下のとおりです。
+        </p>
+      </div>
+
+      <!-- 福祉用具貸与 - Rental -->
+      <div class="eq-block reveal">
+        <span class="eq-block-eyebrow">— 福祉用具貸与 / Rental</span>
+        <h2 class="eq-block-heading" id="eq-list-heading">介護保険で使える福祉用具</h2>
+        <p class="eq-block-desc">
+          給付限度額の範囲内で、自己負担1〜3割でレンタルいただけます。指定事業者からのレンタルが対象となります。
+        </p>
+
+        <div class="eq-note-bar" role="note">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8" stroke="currentColor" stroke-width="1.2"/>
+            <path d="M9 8v5M9 6v.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          <span>原則として要介護2以上の方が対象です。要支援1・2、要介護1の方は、軽度者用の品目(歩行器・歩行補助つえ・スロープ・手すり)が中心となります。医師の所見等により例外的に他品目をご利用いただける場合もありますので、お気軽にご相談ください。</span>
+        </div>
+
+        <div class="eq-grid">
+          <!-- 1. 車いす -->
+          <div class="eq-card">
+            <div class="eq-icon" style="background:#EAF2FB;">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+                <circle cx="9"  cy="25" r="4.5" stroke="#185FA5" stroke-width="1.6" fill="none"/>
+                <circle cx="9"  cy="25" r="1.4" fill="#185FA5"/>
+                <circle cx="26" cy="25" r="4.5" stroke="#185FA5" stroke-width="1.6" fill="none"/>
+                <circle cx="26" cy="25" r="1.4" fill="#185FA5"/>
+                <path d="M9 20.5V13.5l5.5-2.5H22l2 7.5H13" stroke="#185FA5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <circle cx="13" cy="7.5" r="2.2" fill="#185FA5"/>
+              </svg>
+            </div>
+            <div class="eq-body">
+              <p class="eq-name">車いす</p>
+              <p class="eq-note">自走用・介助用・電動車いす</p>
+              <span class="eq-badge eq-badge-rental">レンタル</span>
+            </div>
+          </div>
+
+          <!-- 2. 車いす付属品 -->
+          <div class="eq-card">
+            <div class="eq-icon" style="background:#EAF2FB;">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+                <rect x="6" y="16" width="22" height="9" rx="3" fill="#B5D4F4" stroke="#185FA5" stroke-width="1.4"/>
+                <path d="M11 18v5M17 18v5M23 18v5" stroke="#185FA5" stroke-width="0.7" stroke-dasharray="1.5 1.5"/>
+                <rect x="9" y="9" width="16" height="3" rx="1.2" fill="#378ADD" stroke="#185FA5" stroke-width="1"/>
+              </svg>
+            </div>
+            <div class="eq-body">
+              <p class="eq-name">車いす付属品</p>
+              <p class="eq-note">クッション・電動補助装置・テーブルなど</p>
+              <span class="eq-badge eq-badge-rental">レンタル</span>
+            </div>
+          </div>
+
+          <!-- 3. 特殊寝台 -->
+          <div class="eq-card">
+            <div class="eq-icon" style="background:#E1F5EE;">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+                <rect x="4" y="14" width="26" height="10" rx="2" stroke="#0F6E56" stroke-width="1.6" fill="#E1F5EE"/>
+                <path d="M6 14 L6 10 L15 10 L15 14" stroke="#0F6E56" stroke-width="1.6" fill="#9FE1CB" stroke-linejoin="round"/>
+                <path d="M4 24v4M30 24v4" stroke="#0F6E56" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="eq-body">
+              <p class="eq-name">特殊寝台</p>
+              <p class="eq-note">背上げ・高さ調節のできるもの</p>
+              <span class="eq-badge eq-badge-rental">レンタル</span>
+            </div>
+          </div>
+
+          <!-- 4. 特殊寝台付属品 -->
+          <div class="eq-card">
+            <div class="eq-icon" style="background:#E1F5EE;">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+                <rect x="4" y="18" width="26" height="6" rx="1.5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.4"/>
+                <rect x="6" y="10" width="9" height="10" rx="1" fill="none" stroke="#0F6E56" stroke-width="1.4"/>
+                <path d="M9 10v10M12 10v10" stroke="#0F6E56" stroke-width="1"/>
+                <rect x="19" y="10" width="9" height="10" rx="1" fill="none" stroke="#0F6E56" stroke-width="1.4"/>
+                <path d="M22 10v10M25 10v10" stroke="#0F6E56" stroke-width="1"/>
+              </svg>
+            </div>
+            <div class="eq-body">
+              <p class="eq-name">特殊寝台付属品</p>
+              <p class="eq-note">サイドレール・マットレスなど</p>
+              <span class="eq-badge eq-badge-rental">レンタル</span>
+            </div>
+          </div>
+
+          <!-- 5. 床ずれ防止用具 -->
+          <div class="eq-card">
+            <div class="eq-icon" style="background:#E1F5EE;">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+                <rect x="4" y="14" width="26" height="11" rx="3" fill="#9FE1CB" stroke="#0F6E56" stroke-width="1.5"/>
+                <path d="M8 14v11M13 14v11M18 14v11M23 14v11M27 14v11" stroke="#0F6E56" stroke-width="0.8" opacity="0.5"/>
+              </svg>
+            </div>
+            <div class="eq-body">
+              <p class="eq-name">床ずれ防止用具</p>
+              <p class="eq-note">エアマットレス・体圧分散マットレス</p>
+              <span class="eq-badge eq-badge-rental">レンタル</span>
+            </div>
+          </div>
+
+          <!-- 6. 体位変換器 -->
+          <div class="eq-card">
+            <div class="eq-icon" style="background:#EEEDFE;">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+                <path d="M5 24 L29 24 L24 14 Z" fill="#CECBF6" stroke="#534AB7" stroke-width="1.4" stroke-linejoin="round"/>
+                <path d="M10 11 Q17 6 24 11" stroke="#534AB7" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+                <path d="M22 9 L24 11 L22 13" stroke="#534AB7" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="eq-body">
+              <p class="eq-name">体位変換器</p>
+              <p class="eq-note">体位の変換を補助するクッション類</p>
+              <span class="eq-badge eq-badge-rental">レンタル</span>
+            </div>
+          </div>
+
+          <!-- 7. 手すり -->
+          <div class="eq-card">
+            <div class="eq-icon" style="background:#FBEAF0;">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+                <rect x="5" y="12" width="24" height="5" rx="2.5" fill="#F4C0D1" stroke="#993556" stroke-width="1.4"/>
+                <rect x="8"  y="17" width="3" height="10" rx="1" fill="#D4537E"/>
+                <rect x="23" y="17" width="3" height="10" rx="1" fill="#D4537E"/>
+              </svg>
+            </div>
+            <div class="eq-body">
+              <p class="eq-name">手すり</p>
+              <p class="eq-note">工事を伴わないもの</p>
+              <span class="eq-badge eq-badge-rental">レンタル</span>
+            </div>
+          </div>
+
+          <!-- 8. スロープ -->
+          <div class="eq-card">
+            <div class="eq-icon" style="background:#F4F1EC;">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+                <path d="M5 28 L29 11 L29 13 L5 30 Z" fill="#B4B2A9" stroke="#5F5E5A" stroke-width="1.4" stroke-linejoin="round"/>
+                <rect x="3" y="28" width="28" height="2" rx="0.5" fill="#5F5E5A"/>
+              </svg>
+            </div>
+            <div class="eq-body">
+              <p class="eq-name">スロープ</p>
+              <p class="eq-note">工事不要。固定式は購入も可</p>
+              <span class="eq-badge eq-badge-both">レンタル／購入</span>
+            </div>
+          </div>
+
+          <!-- 9. 歩行器 -->
+          <div class="eq-card">
+            <div class="eq-icon" style="background:#FDF3E3;">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+                <path d="M7 10v18M27 10v18" stroke="#8A5A00" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M7 10h20" stroke="#8A5A00" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M7 17h20" stroke="#8A5A00" stroke-width="1.4" stroke-linecap="round"/>
+                <circle cx="7"  cy="28" r="2" fill="#EF9F27"/>
+                <circle cx="27" cy="28" r="2" fill="#EF9F27"/>
+              </svg>
+            </div>
+            <div class="eq-body">
+              <p class="eq-name">歩行器</p>
+              <p class="eq-note">左右フレームが前にあるもの。ピックアップ式は購入も可</p>
+              <span class="eq-badge eq-badge-both">レンタル／購入</span>
+            </div>
+          </div>
+
+          <!-- 10. 歩行補助つえ -->
+          <div class="eq-card">
+            <div class="eq-icon" style="background:#FDF3E3;">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+                <path d="M17 6 Q14 12 14 28" stroke="#8A5A00" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+                <path d="M17 6 Q21 6 21 9" stroke="#8A5A00" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <circle cx="11" cy="29" r="1.6" fill="#EF9F27"/>
+                <circle cx="14" cy="29" r="1.6" fill="#EF9F27"/>
+                <circle cx="17" cy="29" r="1.6" fill="#EF9F27"/>
+              </svg>
+            </div>
+            <div class="eq-body">
+              <p class="eq-name">歩行補助つえ</p>
+              <p class="eq-note">松葉づえ・多点づえなど。松葉づえ以外は購入も可</p>
+              <span class="eq-badge eq-badge-both">レンタル／購入</span>
+            </div>
+          </div>
+
+          <!-- 11. 認知症老人徘徊感知機器 -->
+          <div class="eq-card">
+            <div class="eq-icon" style="background:#FBEAF0;">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+                <rect x="13" y="6" width="8" height="6" rx="1.5" fill="#F4C0D1" stroke="#993556" stroke-width="1.4"/>
+                <circle cx="17" cy="9" r="1.2" fill="#993556"/>
+                <path d="M11 14 Q17 22 23 14" stroke="#D4537E" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+                <path d="M9 16 Q17 26 25 16" stroke="#D4537E" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.65"/>
+                <path d="M7 18 Q17 30 27 18" stroke="#D4537E" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.4"/>
+              </svg>
+            </div>
+            <div class="eq-body">
+              <p class="eq-name">認知症老人徘徊感知機器</p>
+              <p class="eq-note">通過・離床時に通報する装置</p>
+              <span class="eq-badge eq-badge-rental">レンタル</span>
+            </div>
+          </div>
+
+          <!-- 12. 移動用リフト -->
+          <div class="eq-card">
+            <div class="eq-icon" style="background:#EAF2FB;">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+                <rect x="4" y="6" width="26" height="3" rx="1" fill="#B5D4F4" stroke="#185FA5" stroke-width="1.2"/>
+                <path d="M6 9v18M28 9v18" stroke="#378ADD" stroke-width="1.4" stroke-linecap="round"/>
+                <path d="M17 9v6" stroke="#185FA5" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M11 15 Q17 23 23 15" stroke="#185FA5" stroke-width="1.5" fill="#B5D4F4" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="eq-body">
+              <p class="eq-name">移動用リフト</p>
+              <p class="eq-note">人を持ち上げ移動させるもの</p>
+              <span class="eq-badge eq-badge-rental">レンタル</span>
+            </div>
+          </div>
+
+          <!-- 13. 自動排泄処理装置 -->
+          <div class="eq-card">
+            <div class="eq-icon" style="background:#E1F5EE;">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+                <rect x="6" y="14" width="22" height="13" rx="3" fill="#9FE1CB" stroke="#0F6E56" stroke-width="1.5"/>
+                <rect x="9" y="17" width="16" height="4" rx="0.8" fill="#E1F5EE"/>
+                <circle cx="12" cy="24" r="0.9" fill="#0F6E56"/>
+                <circle cx="17" cy="24" r="0.9" fill="#0F6E56"/>
+                <circle cx="22" cy="24" r="0.9" fill="#0F6E56"/>
+                <path d="M28 17 Q31 14 31 10" stroke="#0F6E56" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="eq-body">
+              <p class="eq-name">自動排泄処理装置</p>
+              <p class="eq-note">尿・便を自動吸引するもの</p>
+              <span class="eq-badge eq-badge-rental">レンタル</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 特定福祉用具購入 - Purchase -->
+      <div class="eq-block reveal">
+        <span class="eq-block-eyebrow">— 特定福祉用具購入 / Purchase</span>
+        <h2 class="eq-block-heading">購入できる福祉用具</h2>
+        <p class="eq-block-desc">
+          年間10万円(4月〜翌3月)を上限に、自己負担1〜3割でご購入いただけます。指定事業者からの購入が対象です。
+        </p>
+
+        <div class="eq-grid">
+          <!-- 1. 腰掛便座 -->
+          <div class="eq-card">
+            <div class="eq-icon" style="background:#EAF2FB;">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+                <ellipse cx="17" cy="13" rx="9" ry="6" fill="#B5D4F4" stroke="#185FA5" stroke-width="1.5"/>
+                <ellipse cx="17" cy="13" rx="5.5" ry="3.2" fill="#FFFFFF" stroke="#185FA5" stroke-width="1"/>
+                <path d="M8 13 Q4 7 9 4" stroke="#185FA5" stroke-width="1.5" fill="#B5D4F4" stroke-linecap="round"/>
+                <rect x="10" y="20" width="14" height="2" rx="1" fill="#185FA5"/>
+                <path d="M11 22v6M23 22v6" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="eq-body">
+              <p class="eq-name">腰掛便座</p>
+              <p class="eq-note">補高便座・ポータブルトイレなど</p>
+              <span class="eq-badge eq-badge-buy">購入</span>
+            </div>
+          </div>
+
+          <!-- 2. 自動排泄処理装置の交換可能部品 -->
+          <div class="eq-card">
+            <div class="eq-icon" style="background:#E1F5EE;">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+                <path d="M5 10 Q14 10 17 17 Q20 24 29 24" stroke="#0F6E56" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <path d="M5 10 Q14 10 17 17 Q20 24 29 24" stroke="#9FE1CB" stroke-width="1" fill="none" stroke-linecap="round"/>
+                <circle cx="5" cy="10" r="2.5" fill="#9FE1CB" stroke="#0F6E56" stroke-width="1.4"/>
+                <circle cx="29" cy="24" r="2.5" fill="#9FE1CB" stroke="#0F6E56" stroke-width="1.4"/>
+                <circle cx="17" cy="17" r="1.8" fill="#0F6E56"/>
+              </svg>
+            </div>
+            <div class="eq-body">
+              <p class="eq-name">自動排泄処理装置の交換可能部品</p>
+              <p class="eq-note">尿・便の経路となる部品</p>
+              <span class="eq-badge eq-badge-buy">購入</span>
+            </div>
+          </div>
+
+          <!-- 3. 排泄予測支援機器 -->
+          <div class="eq-card">
+            <div class="eq-icon" style="background:#EEEDFE;">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+                <path d="M8 8 Q8 6 11 6 L23 6 Q26 6 26 8 L25 18 Q25 22 17 22 Q9 22 9 18 Z" fill="#CECBF6" stroke="#534AB7" stroke-width="1.4" stroke-linejoin="round"/>
+                <rect x="14" y="12" width="6" height="4" rx="1" fill="#FFFFFF" stroke="#534AB7" stroke-width="1.4"/>
+                <circle cx="17" cy="14" r="0.9" fill="#534AB7"/>
+                <path d="M17 9 Q15 7 16 5" stroke="#534AB7" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+                <path d="M19 9 Q21 7 20 4" stroke="#534AB7" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+                <path d="M6 27 L10 27 L11 24 L14 30 L17 25 L20 28 L28 28" stroke="#534AB7" stroke-width="1.2" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="eq-body">
+              <p class="eq-name">排泄予測支援機器</p>
+              <p class="eq-note">膀胱状態を感知し排泄機会を通知(消耗品除く)</p>
+              <span class="eq-badge eq-badge-buy">購入</span>
+            </div>
+          </div>
+
+          <!-- 4. 入浴補助用具 -->
+          <div class="eq-card">
+            <div class="eq-icon" style="background:#EAF2FB;">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+                <rect x="9" y="16" width="16" height="3" rx="1" fill="#B5D4F4" stroke="#185FA5" stroke-width="1.4"/>
+                <rect x="9" y="8" width="3" height="11" rx="1" fill="#378ADD"/>
+                <path d="M11 19v8M23 19v8" stroke="#185FA5" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M11 25h12" stroke="#378ADD" stroke-width="1.4" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="eq-body">
+              <p class="eq-name">入浴補助用具</p>
+              <p class="eq-note">入浴いす・手すり・すのこ・介助ベルト</p>
+              <span class="eq-badge eq-badge-buy">購入</span>
+            </div>
+          </div>
+
+          <!-- 5. 簡易浴槽 -->
+          <div class="eq-card">
+            <div class="eq-icon" style="background:#FDF3E3;">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+                <path d="M5 18 Q5 13 9 13 L25 13 Q29 13 29 18 L28 25 Q28 27 26 27 L8 27 Q6 27 6 25 Z" fill="#FAC775" stroke="#8A5A00" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M8 19 Q12 17 17 19 Q22 21 26 19" stroke="#FFFFFF" stroke-width="1.2" fill="none"/>
+                <path d="M9 13v-3M9 10h4" stroke="#8A5A00" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="eq-body">
+              <p class="eq-name">簡易浴槽</p>
+              <p class="eq-note">工事不要の移動式浴槽</p>
+              <span class="eq-badge eq-badge-buy">購入</span>
+            </div>
+          </div>
+
+          <!-- 6. 移動用リフトのつり具部分 -->
+          <div class="eq-card">
+            <div class="eq-icon" style="background:#EAF2FB;">
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+                <path d="M14 4 Q14 7 17 7 Q20 7 20 4" stroke="#185FA5" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+                <path d="M17 7 L9 16" stroke="#185FA5" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M17 7 L25 16" stroke="#185FA5" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M9 16 L9 22 Q9 26 13 26 L21 26 Q25 26 25 22 L25 16 Q21 18 17 18 Q13 18 9 16 Z" fill="#B5D4F4" stroke="#185FA5" stroke-width="1.4" stroke-linejoin="round"/>
+                <path d="M9 21 Q17 23 25 21" stroke="#185FA5" stroke-width="1" fill="none"/>
+              </svg>
+            </div>
+            <div class="eq-body">
+              <p class="eq-name">移動用リフトのつり具部分</p>
+              <p class="eq-note">リフトに取り付けるつり具</p>
+              <span class="eq-badge eq-badge-buy">購入</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 住宅改修 - Home Modification -->
+      <div class="eq-block reveal">
+        <span class="eq-block-eyebrow">— 住宅改修 / Home Modification</span>
+        <h2 class="eq-block-heading">介護保険による住宅改修</h2>
+        <p class="eq-block-desc">
+          対象工事費の合計20万円までを上限に、自己負担1〜3割でご利用いただけます。事前申請が必要です。
+        </p>
+
+        <div class="eq-note-bar" role="note">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8" stroke="currentColor" stroke-width="1.2"/>
+            <path d="M9 8v5M9 6v.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          <span>支給対象は介護保険の認定を受けた方です。事前にケアマネジャーへのご相談と、市区町村への申請が必要です。当社が申請から工事完了まで一貫してサポートいたします。</span>
+        </div>
+
+        <div class="ren-grid">
+          <!-- 住改01 手すり -->
+          <div class="ren-card">
+            <div class="ren-icon" style="background:#FBEAF0;">
+              <svg width="28" height="28" viewBox="0 0 34 34" fill="none">
+                <path d="M2 4v26" stroke="#993556" stroke-width="1.4" stroke-linecap="round"/>
+                <rect x="6" y="13" width="22" height="4" rx="2" fill="#F4C0D1" stroke="#993556" stroke-width="1.4"/>
+                <rect x="8" y="9" width="2.5" height="4" rx="0.5" fill="#993556"/>
+                <rect x="23.5" y="9" width="2.5" height="4" rx="0.5" fill="#993556"/>
+              </svg>
+            </div>
+            <div class="ren-body">
+              <p class="ren-num">住改 01</p>
+              <p class="ren-title">手すりの取り付け</p>
+              <p class="ren-desc">廊下・トイレ・浴室・玄関などへの設置</p>
+            </div>
+          </div>
+
+          <!-- 住改02 段差解消 -->
+          <div class="ren-card">
+            <div class="ren-icon" style="background:#EAF2FB;">
+              <svg width="28" height="28" viewBox="0 0 34 34" fill="none">
+                <path d="M4 24 L18 24 L18 14 L30 14 L30 28 L4 28 Z" fill="#B5D4F4" stroke="#185FA5" stroke-width="1.4" stroke-linejoin="round"/>
+                <path d="M4 24 L18 14" stroke="#185FA5" stroke-width="2" stroke-linecap="round"/>
+                <path d="M10 18 L8 20 L10 22" stroke="#378ADD" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="ren-body">
+              <p class="ren-num">住改 02</p>
+              <p class="ren-title">段差の解消</p>
+              <p class="ren-desc">段差除去・傾斜路(スロープ)の設置</p>
+            </div>
+          </div>
+
+          <!-- 住改03 滑り止め床材 -->
+          <div class="ren-card">
+            <div class="ren-icon" style="background:#FDF3E3;">
+              <svg width="28" height="28" viewBox="0 0 34 34" fill="none">
+                <rect x="4" y="20" width="26" height="10" rx="1" fill="#FAC775" stroke="#8A5A00" stroke-width="1.4"/>
+                <circle cx="9" cy="23" r="1" fill="#8A5A00"/>
+                <circle cx="14" cy="23" r="1" fill="#8A5A00"/>
+                <circle cx="19" cy="23" r="1" fill="#8A5A00"/>
+                <circle cx="24" cy="23" r="1" fill="#8A5A00"/>
+                <circle cx="11.5" cy="27" r="1" fill="#8A5A00"/>
+                <circle cx="16.5" cy="27" r="1" fill="#8A5A00"/>
+                <circle cx="21.5" cy="27" r="1" fill="#8A5A00"/>
+                <ellipse cx="17" cy="11" rx="3" ry="5" fill="#EF9F27" opacity="0.6"/>
+              </svg>
+            </div>
+            <div class="ren-body">
+              <p class="ren-num">住改 03</p>
+              <p class="ren-title">滑り止め床材への変更</p>
+              <p class="ren-desc">転倒リスクを軽減する床材・滑り止め材への変更</p>
+            </div>
+          </div>
+
+          <!-- 住改04 引き戸 -->
+          <div class="ren-card">
+            <div class="ren-icon" style="background:#E1F5EE;">
+              <svg width="28" height="28" viewBox="0 0 34 34" fill="none">
+                <rect x="4" y="5" width="26" height="24" rx="1" stroke="#0F6E56" stroke-width="1.4" fill="none"/>
+                <rect x="6" y="7" width="10" height="20" rx="0.5" fill="#9FE1CB" stroke="#0F6E56" stroke-width="1.2"/>
+                <circle cx="14" cy="17" r="0.9" fill="#0F6E56"/>
+                <path d="M19 17 L26 17" stroke="#0F6E56" stroke-width="1.4" stroke-linecap="round"/>
+                <path d="M24 15 L26 17 L24 19" stroke="#0F6E56" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="ren-body">
+              <p class="ren-num">住改 04</p>
+              <p class="ren-title">引き戸等への扉の取替え</p>
+              <p class="ren-desc">開き戸を引き戸・折れ戸・アコーディオン戸へ変更</p>
+            </div>
+          </div>
+
+          <!-- 住改05 洋式便座 -->
+          <div class="ren-card">
+            <div class="ren-icon" style="background:#EEEDFE;">
+              <svg width="28" height="28" viewBox="0 0 34 34" fill="none">
+                <rect x="22" y="6" width="7" height="10" rx="1" fill="#CECBF6" stroke="#534AB7" stroke-width="1.3"/>
+                <ellipse cx="13" cy="20" rx="9" ry="5" fill="#CECBF6" stroke="#534AB7" stroke-width="1.4"/>
+                <path d="M4 20 Q4 7 13 7" stroke="#534AB7" stroke-width="1.4" fill="#AFA9EC"/>
+                <path d="M22 16 L22 20 L20 20" stroke="#534AB7" stroke-width="1.2" fill="none"/>
+                <path d="M4 28h26" stroke="#534AB7" stroke-width="1.2"/>
+              </svg>
+            </div>
+            <div class="ren-body">
+              <p class="ren-num">住改 05</p>
+              <p class="ren-title">洋式便器等への取替え</p>
+              <p class="ren-desc">和式トイレから洋式トイレへの変更</p>
+            </div>
+          </div>
+
+          <!-- 住改06 付帯工事 -->
+          <div class="ren-card">
+            <div class="ren-icon" style="background:#F4F1EC;">
+              <svg width="28" height="28" viewBox="0 0 34 34" fill="none">
+                <path d="M22 6 Q26 6 27 10 Q28 14 24 16 L17 23 L11 25 L9 27 L5 23 L7 21 L9 15 L16 8 Q19 6 22 6 Z" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="1.4" stroke-linejoin="round"/>
+                <circle cx="22.5" cy="11.5" r="1.8" fill="#5F5E5A"/>
+                <rect x="6" y="6" width="3" height="8" rx="0.5" fill="#5F5E5A" transform="rotate(-30 7.5 10)"/>
+                <rect x="3" y="13" width="2" height="14" rx="0.8" fill="#888780" transform="rotate(-30 4 20)"/>
+              </svg>
+            </div>
+            <div class="ren-body">
+              <p class="ren-num">住改 06</p>
+              <p class="ren-title">上記改修に付帯する工事</p>
+              <p class="ren-desc">①〜⑤の改修に伴い必要となる下地補強・給排水工事など</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- Flow specific to welfare equipment -->
   <section class="section flow flow--inverted">
     <div class="container">

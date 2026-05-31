@@ -1380,3 +1380,233 @@ footer {
   .logo-text { font-size: 14.5px; }
   .logo-text small { font-size: 9px; letter-spacing: 0.18em; }
 }
+
+/* ========== Equipment List Section ========== */
+.equipment-section {
+  background: var(--bg);
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+.equipment-section .container {
+  max-width: 920px;
+}
+.eq-intro {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 72px;
+}
+.eq-intro-heading {
+  font-family: var(--font-jp-display);
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 14px 0 22px;
+  letter-spacing: 0.05em;
+}
+.eq-intro-desc {
+  font-family: var(--font-jp);
+  font-size: 14.5px;
+  line-height: 2;
+  color: var(--ink);
+}
+.eq-intro-desc strong {
+  color: var(--accent);
+  font-weight: 500;
+}
+.eq-block {
+  margin-bottom: 0;
+}
+.eq-block + .eq-block {
+  margin-top: 72px;
+  padding-top: 72px;
+  border-top: 1px solid var(--line);
+}
+.eq-block-eyebrow {
+  font-family: var(--font-lt);
+  font-style: italic;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin: 0 0 10px;
+  display: block;
+}
+.eq-block-heading {
+  font-family: var(--font-jp-display);
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0 0 12px;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+}
+.eq-block-desc {
+  font-family: var(--font-jp);
+  font-size: 14px;
+  line-height: 1.95;
+  color: var(--ink);
+  margin: 0 0 20px;
+}
+.eq-note-bar {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #FFFFFF;
+  border-radius: 4px;
+  border: 1px solid var(--line-soft);
+  border-left: 3px solid var(--accent);
+  padding: 14px 18px;
+  font-family: var(--font-jp);
+  font-size: 12.5px;
+  color: var(--ink);
+  margin-bottom: 32px;
+  line-height: 1.85;
+}
+.eq-note-bar svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--accent);
+}
+
+/* Equipment grid */
+.eq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(156px, 1fr));
+  gap: 14px;
+}
+.eq-card {
+  background: #FFFFFF;
+  border: 1px solid var(--line-soft);
+  border-radius: 10px;
+  padding: 18px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.eq-card:hover {
+  border-color: rgba(139, 107, 71, 0.35);
+  transform: translateY(-2px);
+}
+.eq-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.eq-body {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.eq-name {
+  font-family: var(--font-jp);
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.45;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+.eq-note {
+  font-family: var(--font-jp);
+  font-size: 11px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* Equipment badges (rental/buy/both) */
+.eq-badge {
+  display: inline-block;
+  font-family: var(--font-lt);
+  font-size: 10px;
+  font-weight: 500;
+  padding: 2px 9px;
+  border-radius: 100px;
+  letter-spacing: 0.04em;
+  margin-top: 4px;
+  align-self: flex-start;
+}
+.eq-badge-rental { background: #EAF2FB; color: #185FA5; }
+.eq-badge-buy    { background: #E1F5EE; color: #0F6E56; }
+.eq-badge-both   { background: #FDF3E3; color: #8A5A00; }
+
+/* Home renovation grid */
+.ren-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+}
+.ren-card {
+  background: #FFFFFF;
+  border: 1px solid var(--line-soft);
+  border-radius: 10px;
+  padding: 20px 20px 18px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.ren-card:hover {
+  border-color: rgba(139, 107, 71, 0.35);
+  transform: translateY(-2px);
+}
+.ren-icon {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ren-body {
+  flex: 1;
+  min-width: 0;
+}
+.ren-num {
+  font-family: var(--font-lt);
+  font-style: italic;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  margin: 0 0 4px;
+}
+.ren-title {
+  font-family: var(--font-jp);
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 0 4px;
+  line-height: 1.5;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+.ren-desc {
+  font-family: var(--font-jp);
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.65;
+}
+
+@media (max-width: 720px) {
+  .equipment-section { padding-top: 72px; padding-bottom: 72px; }
+  .eq-intro { margin-bottom: 56px; }
+  .eq-intro-heading { font-size: 26px; }
+  .eq-intro-desc { font-size: 13.5px; }
+  .eq-block + .eq-block { margin-top: 56px; padding-top: 56px; }
+  .eq-block-heading { font-size: 22px; }
+  .eq-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
+  .ren-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .eq-grid { grid-template-columns: repeat(2, 1fr); }
+  .eq-card { padding: 14px 12px 12px; }
+  .eq-name { font-size: 12.5px; }
+  .eq-note { font-size: 10.5px; }
+}
