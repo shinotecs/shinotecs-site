@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ピオ 追加セクション — シノテクス株式会社（挿入用プレビュー）</title>
+  <style>
+    /* =====================================================
+       このファイルは pio.html に挿入するための
+       セクション単体プレビュー用です。
+       実際のサイトではサイト全体のCSSも適用されます。
+    ===================================================== */
+
+    :root {
+      --color-bg:            #FAF7F2;
+      --color-surface:       #FFFFFF;
+      --color-surface-muted: #F4F1EC;
+      --color-text:          #1A1A18;
+      --color-text-muted:    #6B6860;
+      --color-border:        rgba(26,26,24,0.12);
+      --color-border-strong: rgba(26,26,24,0.22);
+      --color-teal:          #1D9E75;
+      --color-teal-light:    #E1F5EE;
+      --color-teal-mid:      #9FE1CB;
+      --radius-sm:  6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+    }
+
+    body { background: var(--color-bg); color: var(--color-text); margin: 0; padding: 2rem; }
+
+    /* ── 共通ユーティリティ ───────────────── */
+    .pio-section { max-width: 860px; margin: 0 auto; padding: 4rem 0; }
+    .pio-section + .pio-section { border-top: 0.5px solid var(--color-border); }
+
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      margin: 0 0 8px;
+    }
+    .section-heading {
+      font-size: 26px;
+      font-weight: 500;
+      margin: 0 0 6px;
+      line-height: 1.35;
+    }
+    .section-desc {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.8;
+      margin: 0 0 2rem;
+    }
+
+    /* =====================================================
+       ① 介護保険サービス一覧
+    ===================================================== */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+    }
+    .svc-card {
+      background: var(--color-surface);
+      border: 0.5px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 18px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: border-color 0.15s;
+    }
+    .svc-card:hover { border-color: var(--color-border-strong); }
+    .svc-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .svc-name {
+      font-size: 13px;
+      font-weight: 500;
+      margin: 0 0 2px;
+      line-height: 1.4;
+    }
+    .svc-desc {
+      font-size: 11px;
+      color: var(--color-text-muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+    .note-bar {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      background: var(--color-surface-muted);
+      border-radius: var(--radius-md);
+      border: 0.5px solid var(--color-border);
+      padding: 12px 16px;
+      font-size: 13px;
+      color: var(--color-text-muted);
+      margin-top: 16px;
+    }
+    .note-bar svg { flex-shrink: 0; margin-top: 1px; }
+
+    /* =====================================================
+       ② 費用0円の強調
+    ===================================================== */
+    .zero-cost-block {
+      background: var(--color-surface);
+      border: 0.5px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0 2.5rem;
+      align-items: center;
+    }
+    .zero-cost-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      border-right: 0.5px solid var(--color-border);
+      padding-right: 2.5rem;
+    }
+    .zero-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .zero-num {
+      font-size: 72px;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--color-teal);
+      margin: 4px 0 0;
+      letter-spacing: -0.04em;
+    }
+    .zero-unit {
+      font-size: 13px;
+      color: var(--color-text-muted);
+      margin: 2px 0 0;
+    }
+    .zero-cost-right { display: flex; flex-direction: column; gap: 12px; }
+    .zero-title {
+      font-size: 20px;
+      font-weight: 500;
+      margin: 0;
+      line-height: 1.4;
+    }
+    .zero-body {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.8;
+      margin: 0;
+    }
+    .zero-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .zero-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--color-text-muted);
+    }
+    .zero-list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-teal-mid);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .zero-cost-block {
+        grid-template-columns: 1fr;
+        gap: 1.5rem 0;
+      }
+      .zero-cost-left {
+        border-right: none;
+        border-bottom: 0.5px solid var(--color-border);
+        padding-right: 0;
+        padding-bottom: 1.5rem;
+        flex-direction: row;
+        gap: 12px;
+        align-items: baseline;
+      }
+      .zero-num { font-size: 52px; }
+    }
+
+    /* =====================================================
+       ③ はじめての介護フロー
+    ===================================================== */
+    .flow-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 640px) { .flow-intro { grid-template-columns: 1fr; } }
+
+    .flow-intro-card {
+      background: var(--color-surface);
+      border: 0.5px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 18px 18px 16px;
+    }
+    .fic-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--color-teal);
+      text-transform: uppercase;
+      margin: 0 0 6px;
+    }
+    .fic-title { font-size: 14px; font-weight: 500; margin: 0 0 4px; }
+    .fic-desc  { font-size: 12px; color: var(--color-text-muted); margin: 0; line-height: 1.6; }
+
+    /* ステップライン */
+    .flow-steps { display: flex; flex-direction: column; gap: 0; position: relative; }
+    .flow-step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 0 18px;
+      align-items: stretch;
+      position: relative;
+    }
+    /* 縦ライン */
+    .flow-step:not(:last-child) .step-line::after {
+      content: '';
+      position: absolute;
+      left: 23px;
+      top: 48px;
+      bottom: 0;
+      width: 1px;
+      background: var(--color-border);
+      z-index: 0;
+    }
+    .step-line {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    .step-circle {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--color-surface);
+      border: 0.5px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .step-circle.is-cm {
+      background: var(--color-teal-light);
+      border-color: var(--color-teal-mid);
+      color: var(--color-teal);
+    }
+    .step-body {
+      background: var(--color-surface);
+      border: 0.5px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      margin-bottom: 12px;
+    }
+    .step-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      padding: 2px 8px;
+      border-radius: 100px;
+      margin-bottom: 5px;
+    }
+    .step-tag.tag-you   { background: #EAF2FB; color: #185FA5; }
+    .step-tag.tag-city  { background: #F4F1EC; color: #5F5E5A; }
+    .step-tag.tag-cm    { background: var(--color-teal-light); color: var(--color-teal); }
+    .step-title { font-size: 14px; font-weight: 500; margin: 0 0 3px; }
+    .step-detail { font-size: 12px; color: var(--color-text-muted); margin: 0; line-height: 1.6; }
+
+    hr.sec-divider {
+      border: none;
+      border-top: 0.5px solid var(--color-border);
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- =====================================================
+  ↓↓↓ pio.html に挿入するコードはここから ↓↓↓
+
+  推奨挿入位置:
+    ① 介護保険サービス一覧 → 「支援する内容」セクションの直後
+    ② 費用0円の強調       → FAQセクションの直前
+    ③ はじめての介護フロー → 「ご利用の流れ」セクションの直後
+===================================================== -->
+
+
+<!-- =====================================================
+  ① 介護保険サービス一覧
+  推奨位置: 「支援する内容（Included Services）」の直後
+===================================================== -->
+<section class="pio-section" id="care-services" aria-labelledby="cs-heading">
+
+  <p class="eyebrow">Coordinated Services — 手配できるサービス</p>
+  <h2 class="section-heading" id="cs-heading">ケアマネジャーが<br>調整できる介護保険サービス</h2>
+  <p class="section-desc">
+    ケアプランに基づき、以下のようなサービスを各事業者と連絡・調整いたします。<br>
+    「どんなサービスがあるの？」という段階のご相談もお気軽にどうぞ。
+  </p>
+
+  <div class="service-grid">
+
+    <!-- 訪問介護 -->
+    <div class="svc-card">
+      <div class="svc-icon" style="background:#EAF2FB;">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+          <circle cx="15" cy="8" r="4" stroke="#185FA5" stroke-width="1.5" fill="none"/>
+          <path d="M7 25 Q7 17 15 17 Q23 17 23 25" stroke="#185FA5" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M5 20 Q8 18 11 19" stroke="#378ADD" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div>
+        <p class="svc-name">訪問介護</p>
+        <p class="svc-desc">ホームヘルパーが自宅を訪問し、身体介護・生活援助を行います</p>
+      </div>
+    </div>
+
+    <!-- 訪問看護 -->
+    <div class="svc-card">
+      <div class="svc-icon" style="background:#FBEAF0;">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+          <rect x="11" y="5" width="8" height="20" rx="2" fill="#F4C0D1" stroke="#993556" stroke-width="1.4"/>
+          <rect x="5" y="11" width="20" height="8" rx="2" fill="#F4C0D1" stroke="#993556" stroke-width="1.4"/>
+          <rect x="13" y="7" width="4" height="16" fill="#FBEAF0"/>
+          <rect x="7" y="13" width="16" height="4" fill="#FBEAF0"/>
+        </svg>
+      </div>
+      <div>
+        <p class="svc-name">訪問看護</p>
+        <p class="svc-desc">看護師が自宅を訪問し、医療的ケアや健康管理を行います</p>
+      </div>
+    </div>
+
+    <!-- 訪問リハビリ -->
+    <div class="svc-card">
+      <div class="svc-icon" style="background:#EEEDFE;">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+          <path d="M8 22 Q8 14 15 14 Q22 14 22 22" stroke="#534AB7" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <circle cx="15" cy="10" r="3.5" stroke="#534AB7" stroke-width="1.5" fill="none"/>
+          <path d="M10 26 Q15 22 20 26" stroke="#AFA9EC" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div>
+        <p class="svc-name">訪問リハビリテーション</p>
+        <p class="svc-desc">理学療法士等が自宅でリハビリを実施します</p>
+      </div>
+    </div>
+
+    <!-- 通所介護（デイサービス） -->
+    <div class="svc-card">
+      <div class="svc-icon" style="background:#E1F5EE;">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+          <rect x="4" y="10" width="22" height="14" rx="3" fill="#9FE1CB" stroke="#0F6E56" stroke-width="1.4"/>
+          <circle cx="9"  cy="24" r="2" fill="#0F6E56"/>
+          <circle cx="21" cy="24" r="2" fill="#0F6E56"/>
+          <path d="M4 16h22" stroke="#0F6E56" stroke-width="1" stroke-dasharray="2 2"/>
+          <path d="M10 10 Q10 6 15 6 Q20 6 20 10" stroke="#0F6E56" stroke-width="1.4" fill="none"/>
+        </svg>
+      </div>
+      <div>
+        <p class="svc-name">通所介護（デイサービス）</p>
+        <p class="svc-desc">施設へ通い、食事・入浴・機能訓練などを受けます</p>
+      </div>
+    </div>
+
+    <!-- 通所リハビリ -->
+    <div class="svc-card">
+      <div class="svc-icon" style="background:#FDF3E3;">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+          <rect x="4" y="11" width="22" height="13" rx="3" fill="#FAC775" stroke="#8A5A00" stroke-width="1.4"/>
+          <circle cx="9"  cy="24" r="2" fill="#8A5A00"/>
+          <circle cx="21" cy="24" r="2" fill="#8A5A00"/>
+          <path d="M12 17 Q15 13 18 17" stroke="#8A5A00" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+          <circle cx="15" cy="19" r="1.5" fill="#8A5A00"/>
+        </svg>
+      </div>
+      <div>
+        <p class="svc-name">通所リハビリテーション</p>
+        <p class="svc-desc">老人保健施設等に通い、専門的リハビリを受けます</p>
+      </div>
+    </div>
+
+    <!-- 短期入所（ショートステイ） -->
+    <div class="svc-card">
+      <div class="svc-icon" style="background:#F4F1EC;">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+          <rect x="4" y="13" width="22" height="10" rx="2" stroke="#5F5E5A" stroke-width="1.4" fill="none"/>
+          <rect x="6" y="10" width="8" height="5" rx="1.5" fill="#D3D1C7"/>
+          <path d="M4 23v3M26 23v3" stroke="#5F5E5A" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M4 13v-2M26 13v-2" stroke="#888780" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M20 8h4M22 6v4" stroke="#5DCAA5" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div>
+        <p class="svc-name">短期入所（ショートステイ）</p>
+        <p class="svc-desc">施設に短期間入所し、介護や機能訓練を受けます</p>
+      </div>
+    </div>
+
+    <!-- 福祉用具レンタル -->
+    <div class="svc-card" style="border-color: rgba(29,158,117,0.3);">
+      <div class="svc-icon" style="background:#E1F5EE;">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+          <circle cx="8"  cy="23" r="4" stroke="#0F6E56" stroke-width="1.4" fill="none"/>
+          <circle cx="8"  cy="23" r="1.3" fill="#0F6E56"/>
+          <circle cx="24" cy="23" r="4" stroke="#0F6E56" stroke-width="1.4" fill="none"/>
+          <circle cx="24" cy="23" r="1.3" fill="#0F6E56"/>
+          <path d="M8 19V13l5-2.5h6l2 7H12" stroke="#0F6E56" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <circle cx="12" cy="7" r="2" fill="#1D9E75"/>
+        </svg>
+      </div>
+      <div>
+        <p class="svc-name">福祉用具レンタル・販売</p>
+        <p class="svc-desc">車いす・ベッド等のレンタル。シノテクスが自社対応します</p>
+      </div>
+    </div>
+
+    <!-- 住宅改修 -->
+    <div class="svc-card">
+      <div class="svc-icon" style="background:#F4F1EC;">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+          <path d="M5 14 L15 5 L25 14 V26 H5 V14Z" stroke="#5F5E5A" stroke-width="1.4" fill="none" stroke-linejoin="round"/>
+          <rect x="11" y="18" width="8" height="8" rx="1" fill="#D3D1C7"/>
+          <path d="M15 18v8" stroke="#888780" stroke-width="1" stroke-dasharray="2 2"/>
+        </svg>
+      </div>
+      <div>
+        <p class="svc-name">住宅改修</p>
+        <p class="svc-desc">手すり設置・段差解消など、自宅の安全改修を支援します</p>
+      </div>
+    </div>
+
+    <!-- 特定施設入居者生活介護 -->
+    <div class="svc-card">
+      <div class="svc-icon" style="background:#FBEAF0;">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+          <path d="M5 26 V12 L15 4 L25 12 V26" stroke="#993556" stroke-width="1.4" fill="none" stroke-linejoin="round"/>
+          <rect x="9" y="15" width="5" height="11" rx="1" fill="#F4C0D1"/>
+          <rect x="16" y="15" width="5" height="7" rx="1" fill="#F4C0D1"/>
+          <circle cx="20" cy="8.5" r="2.5" stroke="#993556" stroke-width="1.3" fill="none"/>
+        </svg>
+      </div>
+      <div>
+        <p class="svc-name">特定施設入居者生活介護</p>
+        <p class="svc-desc">有料老人ホーム等に入居しながら介護を受けます</p>
+      </div>
+    </div>
+
+  </div><!-- /.service-grid -->
+
+  <div class="note-bar" role="note">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="color:var(--color-teal);">
+      <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.1"/>
+      <path d="M8 7v4.5M8 5.5v.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+    </svg>
+    <span>上記はケアマネジャーが調整できるサービスの一部です。ご本人・ご家族の状況に応じて、最適なサービスの組み合わせをご提案します。</span>
+  </div>
+
+</section>
+<hr class="sec-divider">
+
+
+<!-- =====================================================
+  ② 費用0円の強調
+  推奨位置: FAQセクションの直前
+===================================================== -->
+<section class="pio-section" id="cost-zero" aria-labelledby="cz-heading">
+
+  <p class="eyebrow">Cost — 費用について</p>
+  <h2 class="section-heading" id="cz-heading">ケアマネジャーの利用は<br>ご負担0円です</h2>
+  <p class="section-desc">
+    居宅介護支援サービス（ケアプラン作成・サービス調整・モニタリング）にかかる費用は、<br>
+    全額が介護保険でまかなわれます。ご利用者様の自己負担はかかりません。
+  </p>
+
+  <div class="zero-cost-block">
+    <div class="zero-cost-left">
+      <p class="zero-label">自己負担</p>
+      <p class="zero-num">¥0</p>
+      <p class="zero-unit">全額 介護保険負担</p>
+    </div>
+    <div class="zero-cost-right">
+      <p class="zero-title">以下のすべてが無料です</p>
+      <ul class="zero-list">
+        <li>ケアプラン（居宅サービス計画）の作成・変更</li>
+        <li>介護サービス事業者との連絡・調整</li>
+        <li>定期的なモニタリング（月1回以上のご自宅訪問）</li>
+        <li>介護保険の申請・更新手続きのサポート</li>
+        <li>医療機関・関係機関との連携</li>
+      </ul>
+      <p class="zero-body" style="margin-top: 4px;">
+        「費用がかかるのでは」とご心配の方も、どうぞお気軽にご相談ください。
+      </p>
+    </div>
+  </div>
+
+</section>
+<hr class="sec-divider">
+
+
+<!-- =====================================================
+  ③ はじめての介護フロー
+  推奨位置: 「ご利用の流れ（How It Works）」セクションの直後
+===================================================== -->
+<section class="pio-section" id="first-care" aria-labelledby="fc-heading">
+
+  <p class="eyebrow">For Beginners — はじめての介護</p>
+  <h2 class="section-heading" id="fc-heading">「介護が必要かも」と<br>思ったときの流れ</h2>
+  <p class="section-desc">
+    介護保険を使うまでの流れを整理しました。<br>
+    どの段階でもケアマネジャーにご相談いただけます。
+  </p>
+
+  <!-- 状況カード2枚 -->
+  <div class="flow-intro">
+    <div class="flow-intro-card">
+      <p class="fic-eyebrow">Case A</p>
+      <p class="fic-title">まだ介護認定を受けていない方</p>
+      <p class="fic-desc">認定申請の手続きからご案内します。「何から始めればいいか分からない」段階でもご相談ください。</p>
+    </div>
+    <div class="flow-intro-card">
+      <p class="fic-eyebrow">Case B</p>
+      <p class="fic-title">すでに認定を受けている方</p>
+      <p class="fic-desc">ケアプランの作成・サービスの手配をすぐに開始できます。他のケアマネジャーからの変更も可能です。</p>
+    </div>
+  </div>
+
+  <!-- ステップ -->
+  <div class="flow-steps" role="list">
+
+    <div class="flow-step" role="listitem">
+      <div class="step-line">
+        <div class="step-circle">01</div>
+      </div>
+      <div class="step-body">
+        <span class="step-tag tag-you">ご本人・ご家族</span>
+        <p class="step-title">ピオへご相談</p>
+        <p class="step-detail">お電話・FAX・メールでご連絡ください。「介護が必要かもしれない」という段階でも構いません。現在の状況をお聞きし、次のステップをご案内します。</p>
+      </div>
+    </div>
+
+    <div class="flow-step" role="listitem">
+      <div class="step-line">
+        <div class="step-circle">02</div>
+      </div>
+      <div class="step-body">
+        <span class="step-tag tag-you">ご本人・ご家族</span>
+        <span class="step-tag tag-cm" style="margin-left:4px;">ケアマネジャー</span>
+        <p class="step-title">介護保険の申請（要介護認定）</p>
+        <p class="step-detail">お住まいの市区町村（例：坂戸市役所）へ要介護認定の申請を行います。申請手続きはケアマネジャーがサポートします。</p>
+      </div>
+    </div>
+
+    <div class="flow-step" role="listitem">
+      <div class="step-line">
+        <div class="step-circle">03</div>
+      </div>
+      <div class="step-body">
+        <span class="step-tag tag-city">市区町村・調査員</span>
+        <p class="step-title">認定調査・判定</p>
+        <p class="step-detail">調査員がご自宅を訪問して心身の状況を確認します。結果は通常申請から30日以内に通知されます（要支援1〜2 / 要介護1〜5）。</p>
+      </div>
+    </div>
+
+    <div class="flow-step" role="listitem">
+      <div class="step-line">
+        <div class="step-circle is-cm">CM</div>
+      </div>
+      <div class="step-body" style="border-color: rgba(29,158,117,0.3);">
+        <span class="step-tag tag-cm">ケアマネジャー（ピオ）</span>
+        <p class="step-title">アセスメント・ケアプラン作成</p>
+        <p class="step-detail">認定結果をもとに、ご本人・ご家族のご希望を伺いながら居宅サービス計画（ケアプラン）を作成します。費用はかかりません。</p>
+      </div>
+    </div>
+
+    <div class="flow-step" role="listitem">
+      <div class="step-line">
+        <div class="step-circle is-cm">CM</div>
+      </div>
+      <div class="step-body" style="border-color: rgba(29,158,117,0.3);">
+        <span class="step-tag tag-cm">ケアマネジャー（ピオ）</span>
+        <p class="step-title">サービス事業者への連絡・調整</p>
+        <p class="step-detail">訪問介護・デイサービス・福祉用具事業者など、必要なサービス提供事業者と連絡・調整を行います。</p>
+      </div>
+    </div>
+
+    <div class="flow-step" role="listitem">
+      <div class="step-line">
+        <div class="step-circle" style="background:var(--color-surface-muted);">06</div>
+      </div>
+      <div class="step-body">
+        <span class="step-tag tag-you">ご本人・ご家族</span>
+        <p class="step-title">サービス開始・継続支援</p>
+        <p class="step-detail">サービス利用開始後も月1回以上ご自宅を訪問し、状況の変化に応じてケアプランの見直しを行います。何かあればいつでもご相談ください。</p>
+      </div>
+    </div>
+
+  </div><!-- /.flow-steps -->
+
+</section>
+
+<!-- =====================================================
+  ↑↑↑ pio.html に挿入するコードはここまで ↑↑↑
+===================================================== -->
+
+</body>
+</html>
