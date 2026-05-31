@@ -265,6 +265,82 @@
     </div>
   </section>
 
+  <!-- ① 介護保険サービス一覧 -->
+  <section class="section" id="care-services" aria-labelledby="cs-heading" style="background: var(--paper);">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Coordinated Services</span>
+        <h2 id="cs-heading">手配できる介護保険サービス</h2>
+        <p>ケアプランに基づき、以下のようなサービスを各事業者と連絡・調整いたします。<br>「どんなサービスがあるの？」という段階のご相談もお気軽にどうぞ。</p>
+      </div>
+
+      <div class="reveal" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; margin-bottom: 20px;">
+
+        <div style="background:#fff; border:0.5px solid var(--line-soft); border-radius:12px; padding:18px 14px 16px; display:flex; flex-direction:column; gap:10px;">
+          <div style="width:48px;height:48px;border-radius:8px;background:#EAF2FB;display:flex;align-items:center;justify-content:center;">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="7" r="3.5" stroke="#185FA5" stroke-width="1.4" fill="none"/><path d="M6 24 Q6 16 14 16 Q22 16 22 24" stroke="#185FA5" stroke-width="1.4" fill="none" stroke-linecap="round"/><path d="M4 19 Q7 17 10 18" stroke="#378ADD" stroke-width="1.1" fill="none" stroke-linecap="round"/></svg>
+          </div>
+          <div><p style="font-size:13px;font-weight:500;margin:0 0 2px;line-height:1.4;">訪問介護</p><p style="font-size:11px;color:var(--muted);margin:0;line-height:1.5;">ヘルパーが訪問し、身体介護・生活援助を行います</p></div>
+        </div>
+
+        <div style="background:#fff; border:0.5px solid var(--line-soft); border-radius:12px; padding:18px 14px 16px; display:flex; flex-direction:column; gap:10px;">
+          <div style="width:48px;height:48px;border-radius:8px;background:#FBEAF0;display:flex;align-items:center;justify-content:center;">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="9" y="4" width="10" height="20" rx="2" fill="#F4C0D1" stroke="#993556" stroke-width="1.3"/><rect x="3" y="10" width="22" height="8" rx="2" fill="#F4C0D1" stroke="#993556" stroke-width="1.3"/><rect x="11" y="6" width="6" height="16" fill="#FBEAF0"/><rect x="5" y="12" width="18" height="4" fill="#FBEAF0"/></svg>
+          </div>
+          <div><p style="font-size:13px;font-weight:500;margin:0 0 2px;line-height:1.4;">訪問看護</p><p style="font-size:11px;color:var(--muted);margin:0;line-height:1.5;">看護師が訪問し、医療的ケア・健康管理を行います</p></div>
+        </div>
+
+        <div style="background:#fff; border:0.5px solid var(--line-soft); border-radius:12px; padding:18px 14px 16px; display:flex; flex-direction:column; gap:10px;">
+          <div style="width:48px;height:48px;border-radius:8px;background:#EEEDFE;display:flex;align-items:center;justify-content:center;">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M6 22 Q6 13 14 13 Q22 13 22 22" stroke="#534AB7" stroke-width="1.4" fill="none" stroke-linecap="round"/><circle cx="14" cy="9" r="3.2" stroke="#534AB7" stroke-width="1.4" fill="none"/><path d="M9 25 Q14 21 19 25" stroke="#AFA9EC" stroke-width="1.2" fill="none" stroke-linecap="round"/></svg>
+          </div>
+          <div><p style="font-size:13px;font-weight:500;margin:0 0 2px;line-height:1.4;">訪問リハビリテーション</p><p style="font-size:11px;color:var(--muted);margin:0;line-height:1.5;">理学療法士等が自宅でリハビリを行います</p></div>
+        </div>
+
+        <div style="background:#fff; border:0.5px solid var(--line-soft); border-radius:12px; padding:18px 14px 16px; display:flex; flex-direction:column; gap:10px;">
+          <div style="width:48px;height:48px;border-radius:8px;background:#E1F5EE;display:flex;align-items:center;justify-content:center;">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="10" width="22" height="12" rx="3" fill="#9FE1CB" stroke="#0F6E56" stroke-width="1.3"/><circle cx="8" cy="22" r="2" fill="#0F6E56"/><circle cx="20" cy="22" r="2" fill="#0F6E56"/><path d="M3 15h22" stroke="#0F6E56" stroke-width="1" stroke-dasharray="2 2"/><path d="M9 10 Q9 6 14 6 Q19 6 19 10" stroke="#0F6E56" stroke-width="1.3" fill="none"/></svg>
+          </div>
+          <div><p style="font-size:13px;font-weight:500;margin:0 0 2px;line-height:1.4;">通所介護<small style="font-weight:400;">（デイサービス）</small></p><p style="font-size:11px;color:var(--muted);margin:0;line-height:1.5;">施設に通い、食事・入浴・機能訓練を受けます</p></div>
+        </div>
+
+        <div style="background:#fff; border:0.5px solid var(--line-soft); border-radius:12px; padding:18px 14px 16px; display:flex; flex-direction:column; gap:10px;">
+          <div style="width:48px;height:48px;border-radius:8px;background:#FDF3E3;display:flex;align-items:center;justify-content:center;">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="11" width="22" height="12" rx="3" fill="#FAC775" stroke="#8A5A00" stroke-width="1.3"/><circle cx="8" cy="23" r="2" fill="#8A5A00"/><circle cx="20" cy="23" r="2" fill="#8A5A00"/><path d="M11 17 Q14 13 17 17" stroke="#8A5A00" stroke-width="1.3" fill="none" stroke-linecap="round"/><circle cx="14" cy="19" r="1.4" fill="#8A5A00"/></svg>
+          </div>
+          <div><p style="font-size:13px;font-weight:500;margin:0 0 2px;line-height:1.4;">通所リハビリテーション</p><p style="font-size:11px;color:var(--muted);margin:0;line-height:1.5;">老健等に通い、専門的リハビリを受けます</p></div>
+        </div>
+
+        <div style="background:#fff; border:0.5px solid var(--line-soft); border-radius:12px; padding:18px 14px 16px; display:flex; flex-direction:column; gap:10px;">
+          <div style="width:48px;height:48px;border-radius:8px;background:#F4F1EC;display:flex;align-items:center;justify-content:center;">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="12" width="22" height="10" rx="2" stroke="#5F5E5A" stroke-width="1.3" fill="none"/><rect x="5" y="9" width="8" height="5" rx="1.5" fill="#D3D1C7"/><path d="M3 22v3M25 22v3" stroke="#5F5E5A" stroke-width="1.3" stroke-linecap="round"/><path d="M19 7h4M21 5v4" stroke="#5DCAA5" stroke-width="1.2" stroke-linecap="round"/></svg>
+          </div>
+          <div><p style="font-size:13px;font-weight:500;margin:0 0 2px;line-height:1.4;">短期入所<small style="font-weight:400;">（ショートステイ）</small></p><p style="font-size:11px;color:var(--muted);margin:0;line-height:1.5;">施設に短期間入所し、介護・機能訓練を受けます</p></div>
+        </div>
+
+        <div style="background:#fff; border:0.5px solid rgba(29,158,117,0.3); border-radius:12px; padding:18px 14px 16px; display:flex; flex-direction:column; gap:10px;">
+          <div style="width:48px;height:48px;border-radius:8px;background:#E1F5EE;display:flex;align-items:center;justify-content:center;">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="7" cy="22" r="3.8" stroke="#0F6E56" stroke-width="1.3" fill="none"/><circle cx="7" cy="22" r="1.2" fill="#0F6E56"/><circle cx="22" cy="22" r="3.8" stroke="#0F6E56" stroke-width="1.3" fill="none"/><circle cx="22" cy="22" r="1.2" fill="#0F6E56"/><path d="M7 18V12l4.5-2h5.5l2 8H11" stroke="#0F6E56" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="11" cy="6.5" r="1.8" fill="#1D9E75"/></svg>
+          </div>
+          <div><p style="font-size:13px;font-weight:500;margin:0 0 2px;line-height:1.4;">福祉用具レンタル・販売</p><p style="font-size:11px;color:var(--muted);margin:0;line-height:1.5;">車いす・ベッド等。シノテクスが自社で対応します</p></div>
+        </div>
+
+        <div style="background:#fff; border:0.5px solid var(--line-soft); border-radius:12px; padding:18px 14px 16px; display:flex; flex-direction:column; gap:10px;">
+          <div style="width:48px;height:48px;border-radius:8px;background:#F4F1EC;display:flex;align-items:center;justify-content:center;">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 25V12L14 4L24 12V25" stroke="#5F5E5A" stroke-width="1.3" fill="none" stroke-linejoin="round"/><rect x="8" y="15" width="5" height="10" rx="1" fill="#D3D1C7"/><rect x="15" y="15" width="5" height="6" rx="1" fill="#D3D1C7"/></svg>
+          </div>
+          <div><p style="font-size:13px;font-weight:500;margin:0 0 2px;line-height:1.4;">住宅改修</p><p style="font-size:11px;color:var(--muted);margin:0;line-height:1.5;">手すり設置・段差解消など自宅の安全改修を支援</p></div>
+        </div>
+
+      </div>
+
+      <div class="reveal" style="display:flex;align-items:flex-start;gap:8px;background:var(--paper);border-radius:8px;border:0.5px solid var(--line-soft);padding:12px 16px;font-size:13px;color:var(--muted);">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:1px;color:var(--accent);"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.1"/><path d="M8 7v4.5M8 5.5v.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        <span>上記はケアマネジャーが調整できるサービスの一部です。ご本人・ご家族の状況に応じて、最適なサービスの組み合わせをご提案します。</span>
+      </div>
+    </div>
+  </section>
+
   <!-- Flow specific to care management -->
   <section class="section flow flow--inverted">
     <div class="container">
@@ -298,6 +374,114 @@
           <h4>サービス開始・継続支援</h4>
           <p>サービス開始後も状況に応じて見直し、継続して支援を続けます。</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ③ はじめての介護フロー -->
+  <section class="section" id="first-care" aria-labelledby="fc-heading">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">For Beginners — はじめての介護</span>
+        <h2 id="fc-heading">「介護が必要かも」と<br>思ったときの流れ</h2>
+        <p>介護保険を使うまでの流れを整理しました。どの段階でもケアマネジャーにご相談いただけます。</p>
+      </div>
+
+      <!-- 状況カード -->
+      <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:2.5rem;">
+        <div style="background:#fff;border:0.5px solid var(--line-soft);border-radius:12px;padding:18px 20px;">
+          <p style="font-size:11px;letter-spacing:0.1em;color:var(--accent);text-transform:uppercase;margin:0 0 6px;">Case A</p>
+          <p style="font-size:14px;font-weight:500;margin:0 0 4px;">まだ介護認定を受けていない方</p>
+          <p style="font-size:12px;color:var(--muted);margin:0;line-height:1.6;">認定申請の手続きからご案内します。「何から始めればいいか」という段階でもご相談ください。</p>
+        </div>
+        <div style="background:#fff;border:0.5px solid var(--line-soft);border-radius:12px;padding:18px 20px;">
+          <p style="font-size:11px;letter-spacing:0.1em;color:var(--accent);text-transform:uppercase;margin:0 0 6px;">Case B</p>
+          <p style="font-size:14px;font-weight:500;margin:0 0 4px;">すでに認定を受けている方</p>
+          <p style="font-size:12px;color:var(--muted);margin:0;line-height:1.6;">ケアプランの作成・サービスの手配をすぐに開始できます。他のケアマネジャーからの変更も可能です。</p>
+        </div>
+      </div>
+
+      <!-- ステップ縦並び -->
+      <div class="reveal" style="display:flex;flex-direction:column;gap:0;">
+
+        <!-- step 1 -->
+        <div style="display:grid;grid-template-columns:48px 1fr;gap:0 18px;align-items:stretch;position:relative;">
+          <div style="display:flex;flex-direction:column;align-items:center;position:relative;">
+            <div style="width:48px;height:48px;border-radius:50%;background:#fff;border:0.5px solid var(--line-soft);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:var(--muted);position:relative;z-index:1;">01</div>
+            <div style="width:1px;flex:1;background:var(--line-soft);margin:0 auto;"></div>
+          </div>
+          <div style="background:#fff;border:0.5px solid var(--line-soft);border-radius:10px;padding:14px 18px;margin-bottom:12px;">
+            <span style="display:inline-block;font-size:10px;font-weight:500;padding:2px 8px;border-radius:100px;background:#EAF2FB;color:#185FA5;margin-bottom:6px;">ご本人・ご家族</span>
+            <p style="font-size:14px;font-weight:500;margin:0 0 3px;">ピオへご相談</p>
+            <p style="font-size:12px;color:var(--muted);margin:0;line-height:1.6;">お電話・FAX・メールでご連絡ください。「介護が必要かも」という段階でも構いません。現在の状況をお聞きし、次のステップをご案内します。</p>
+          </div>
+        </div>
+
+        <!-- step 2 -->
+        <div style="display:grid;grid-template-columns:48px 1fr;gap:0 18px;align-items:stretch;position:relative;">
+          <div style="display:flex;flex-direction:column;align-items:center;position:relative;">
+            <div style="width:48px;height:48px;border-radius:50%;background:#fff;border:0.5px solid var(--line-soft);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:var(--muted);position:relative;z-index:1;">02</div>
+            <div style="width:1px;flex:1;background:var(--line-soft);margin:0 auto;"></div>
+          </div>
+          <div style="background:#fff;border:0.5px solid var(--line-soft);border-radius:10px;padding:14px 18px;margin-bottom:12px;">
+            <span style="display:inline-block;font-size:10px;font-weight:500;padding:2px 8px;border-radius:100px;background:#EAF2FB;color:#185FA5;margin-bottom:6px;">ご本人・ご家族</span>
+            <span style="display:inline-block;font-size:10px;font-weight:500;padding:2px 8px;border-radius:100px;background:#E1F5EE;color:#1D9E75;margin-bottom:6px;margin-left:4px;">ケアマネジャー</span>
+            <p style="font-size:14px;font-weight:500;margin:0 0 3px;">介護保険の申請（要介護認定）</p>
+            <p style="font-size:12px;color:var(--muted);margin:0;line-height:1.6;">お住まいの市区町村（例：坂戸市役所）へ要介護認定の申請を行います。申請手続きはケアマネジャーがサポートします。</p>
+          </div>
+        </div>
+
+        <!-- step 3 -->
+        <div style="display:grid;grid-template-columns:48px 1fr;gap:0 18px;align-items:stretch;position:relative;">
+          <div style="display:flex;flex-direction:column;align-items:center;position:relative;">
+            <div style="width:48px;height:48px;border-radius:50%;background:#fff;border:0.5px solid var(--line-soft);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:var(--muted);position:relative;z-index:1;">03</div>
+            <div style="width:1px;flex:1;background:var(--line-soft);margin:0 auto;"></div>
+          </div>
+          <div style="background:#fff;border:0.5px solid var(--line-soft);border-radius:10px;padding:14px 18px;margin-bottom:12px;">
+            <span style="display:inline-block;font-size:10px;font-weight:500;padding:2px 8px;border-radius:100px;background:#F4F1EC;color:#5F5E5A;margin-bottom:6px;">市区町村・調査員</span>
+            <p style="font-size:14px;font-weight:500;margin:0 0 3px;">認定調査・判定</p>
+            <p style="font-size:12px;color:var(--muted);margin:0;line-height:1.6;">調査員がご自宅を訪問し心身の状況を確認します。結果は通常申請から30日以内に通知されます（要支援1〜2 / 要介護1〜5）。</p>
+          </div>
+        </div>
+
+        <!-- step 4 -->
+        <div style="display:grid;grid-template-columns:48px 1fr;gap:0 18px;align-items:stretch;position:relative;">
+          <div style="display:flex;flex-direction:column;align-items:center;position:relative;">
+            <div style="width:48px;height:48px;border-radius:50%;background:#E1F5EE;border:0.5px solid #9FE1CB;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;color:#1D9E75;position:relative;z-index:1;">CM</div>
+            <div style="width:1px;flex:1;background:var(--line-soft);margin:0 auto;"></div>
+          </div>
+          <div style="background:#fff;border:0.5px solid rgba(29,158,117,0.3);border-radius:10px;padding:14px 18px;margin-bottom:12px;">
+            <span style="display:inline-block;font-size:10px;font-weight:500;padding:2px 8px;border-radius:100px;background:#E1F5EE;color:#1D9E75;margin-bottom:6px;">ケアマネジャー（ピオ）</span>
+            <p style="font-size:14px;font-weight:500;margin:0 0 3px;">アセスメント・ケアプラン作成</p>
+            <p style="font-size:12px;color:var(--muted);margin:0;line-height:1.6;">認定結果をもとに、ご本人・ご家族のご希望を伺いながら居宅サービス計画（ケアプラン）を作成します。<strong>費用はかかりません。</strong></p>
+          </div>
+        </div>
+
+        <!-- step 5 -->
+        <div style="display:grid;grid-template-columns:48px 1fr;gap:0 18px;align-items:stretch;position:relative;">
+          <div style="display:flex;flex-direction:column;align-items:center;position:relative;">
+            <div style="width:48px;height:48px;border-radius:50%;background:#E1F5EE;border:0.5px solid #9FE1CB;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;color:#1D9E75;position:relative;z-index:1;">CM</div>
+            <div style="width:1px;flex:1;background:var(--line-soft);margin:0 auto;"></div>
+          </div>
+          <div style="background:#fff;border:0.5px solid rgba(29,158,117,0.3);border-radius:10px;padding:14px 18px;margin-bottom:12px;">
+            <span style="display:inline-block;font-size:10px;font-weight:500;padding:2px 8px;border-radius:100px;background:#E1F5EE;color:#1D9E75;margin-bottom:6px;">ケアマネジャー（ピオ）</span>
+            <p style="font-size:14px;font-weight:500;margin:0 0 3px;">サービス事業者への連絡・調整</p>
+            <p style="font-size:12px;color:var(--muted);margin:0;line-height:1.6;">訪問介護・デイサービス・福祉用具事業者など、必要なサービス提供事業者と連絡・調整を行います。</p>
+          </div>
+        </div>
+
+        <!-- step 6 -->
+        <div style="display:grid;grid-template-columns:48px 1fr;gap:0 18px;align-items:stretch;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="width:48px;height:48px;border-radius:50%;background:#F4F1EC;border:0.5px solid var(--line-soft);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:var(--muted);">06</div>
+          </div>
+          <div style="background:#fff;border:0.5px solid var(--line-soft);border-radius:10px;padding:14px 18px;margin-bottom:12px;">
+            <span style="display:inline-block;font-size:10px;font-weight:500;padding:2px 8px;border-radius:100px;background:#EAF2FB;color:#185FA5;margin-bottom:6px;">ご本人・ご家族</span>
+            <p style="font-size:14px;font-weight:500;margin:0 0 3px;">サービス開始・継続支援</p>
+            <p style="font-size:12px;color:var(--muted);margin:0;line-height:1.6;">サービス利用開始後も月1回以上ご自宅を訪問し、状況の変化に応じてケアプランの見直しを行います。何かあればいつでもご相談ください。</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -393,6 +577,36 @@
               今後、ケアマネジャー増員に伴い、川越市・鶴ヶ島市・所沢市・日高市・飯能市などへの対応エリア拡充を予定しています。
             </p>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ② 費用0円の強調 -->
+  <section class="section" id="cost-zero" aria-labelledby="cz-heading" style="background:var(--paper);">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Cost — 費用について</span>
+        <h2 id="cz-heading">ケアマネジャーの利用は<br>ご負担0円です</h2>
+        <p>居宅介護支援サービスにかかる費用は全額が介護保険でまかなわれます。ご利用者様の自己負担はかかりません。</p>
+      </div>
+
+      <div class="reveal" style="background:#fff;border:0.5px solid var(--line-soft);border-radius:12px;padding:2.5rem 2rem;display:grid;grid-template-columns:auto 1fr;gap:0 2.5rem;align-items:center;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:2px;border-right:0.5px solid var(--line-soft);padding-right:2.5rem;">
+          <p style="font-size:11px;letter-spacing:0.1em;color:var(--muted);text-transform:uppercase;margin:0;">自己負担</p>
+          <p style="font-family:var(--font-lt);font-size:72px;font-weight:300;line-height:1;color:var(--accent);margin:4px 0 0;letter-spacing:-0.04em;">¥0</p>
+          <p style="font-size:12px;color:var(--muted);margin:2px 0 0;">全額 介護保険負担</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <p style="font-size:18px;font-weight:500;margin:0;line-height:1.4;">以下のすべてが無料です</p>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;">
+            <li style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--muted);"><span style="width:6px;height:6px;border-radius:50%;background:#9FE1CB;flex-shrink:0;margin-top:5px;"></span>ケアプラン（居宅サービス計画）の作成・変更</li>
+            <li style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--muted);"><span style="width:6px;height:6px;border-radius:50%;background:#9FE1CB;flex-shrink:0;margin-top:5px;"></span>介護サービス事業者との連絡・調整</li>
+            <li style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--muted);"><span style="width:6px;height:6px;border-radius:50%;background:#9FE1CB;flex-shrink:0;margin-top:5px;"></span>定期的なモニタリング（月1回以上のご自宅訪問）</li>
+            <li style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--muted);"><span style="width:6px;height:6px;border-radius:50%;background:#9FE1CB;flex-shrink:0;margin-top:5px;"></span>介護保険の申請・更新手続きのサポート</li>
+            <li style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--muted);"><span style="width:6px;height:6px;border-radius:50%;background:#9FE1CB;flex-shrink:0;margin-top:5px;"></span>医療機関・関係機関との連携</li>
+          </ul>
+          <p style="font-size:13px;color:var(--muted);margin:0;">「費用がかかるのでは」とご心配の方も、どうぞお気軽にご相談ください。</p>
         </div>
       </div>
     </div>
