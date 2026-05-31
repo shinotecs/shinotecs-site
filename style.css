@@ -1001,6 +1001,24 @@ footer {
   font-family: var(--font-lt);
   font-style: italic;
 }
+.footer-bottom-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.footer-privacy-link {
+  font-family: var(--font-lt);
+  font-size: 12px;
+  color: rgba(250,247,242,0.55);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  transition: color 0.2s ease;
+}
+.footer-privacy-link:hover {
+  color: rgba(250,247,242,0.85);
+  text-decoration: underline;
+}
 
 /* ========== Animations ========== */
 @keyframes fadeUp {
