@@ -15,7 +15,7 @@
         {% assign addr = g.address | append: ' ' | append: g.building %}
         <li>
           <span class="label">{{ r.label | escape }}</span>
-          <span class="value">{{ r.value | escape | newline_to_br | replace: '[[', '<span class="value-num">' | replace: ']]', '</span>' | replace: '{TEL}', g.tel | replace: '{FAX}', g.fax | replace: '{EMAIL}', g.email | replace: '{POSTAL}', g.postal | replace: '{ADDRESS}', addr }}</span>
+          <span class="value">{{ r.value | escape | newline_to_br | replace: '[[', '<span class="value-num">' | replace: ']]', '</span>' | replace: '@@TEL@@', g.tel | replace: '@@FAX@@', g.fax | replace: '@@EMAIL@@', g.email | replace: '@@POSTAL@@', g.postal | replace: '@@ADDRESS@@', addr }}</span>
         </li>
         {% endfor %}
       </ul>

@@ -158,7 +158,7 @@ collections:
             summary: "{{fields.label}}"
             fields:
               - { label: 項目名, name: label, widget: string }
-              - { label: "内容（[[ ]]で囲むと数字書体／{TEL} {FAX} {EMAIL} {POSTAL} {ADDRESS} は共通情報に自動置換）", name: value, widget: text }
+              - { label: "内容（[[ ]]で囲むと数字書体／@@TEL@@ @@FAX@@ @@EMAIL@@ @@POSTAL@@ @@ADDRESS@@ は共通情報に自動置換）", name: value, widget: text }
 
       - name: footer
         label: 7. フッター

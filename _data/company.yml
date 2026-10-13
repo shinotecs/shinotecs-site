@@ -3,7 +3,7 @@ title: "会社情報"
 mission: |-
   地域の医療・福祉・保健の分野を通し、
   地域社会の貢献と発展をめざします。
-# 書き方: [[ ]] で囲むと数字用の書体、{TEL} {FAX} {EMAIL} {POSTAL} {ADDRESS} は共通情報に置き換わります
+# 書き方: [[ ]] で囲むと数字用の書体、@@TEL@@ @@FAX@@ @@EMAIL@@ @@POSTAL@@ @@ADDRESS@@ は共通情報に置き換わります
 rows:
   - label: "会社名"
     value: "シノテクス株式会社"
@@ -11,8 +11,8 @@ rows:
     value: "代表取締役 篠 裕介"
   - label: "所在地"
     value: |-
-      〒{POSTAL}
-      {ADDRESS}
+      〒@@POSTAL@@
+      @@ADDRESS@@
   - label: "設立"
     value: "[[2014年3月12日]]"
   - label: "事業内容"
@@ -36,6 +36,6 @@ rows:
     value: "埼玉りそな銀行 / 埼玉縣信用金庫"
   - label: "連絡先"
     value: |-
-      [[TEL {TEL}]]
-      [[FAX {FAX}]]
-      {EMAIL}
+      [[TEL @@TEL@@]]
+      [[FAX @@FAX@@]]
+      @@EMAIL@@
