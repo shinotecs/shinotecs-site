@@ -14,10 +14,10 @@ roles:
   - name: |-
       福祉用具事業所
       福祉用具の提案・相談スタッフ
-  - name: 福祉用具専門相談員
   - name: |-
       介護支援専門員
       (ケアマネジャー)
+  - name: 事務員
 cta1_label: 採用サイトを見る
 cta1_url: https://ats.rct.airwork.net/sites
 cta2_label: 採用に関するお問い合わせ
