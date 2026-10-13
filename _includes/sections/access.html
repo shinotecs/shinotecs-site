@@ -13,7 +13,7 @@
       <div class="access-grid">
         <div class="access-map reveal">
           <iframe
-            src="{{ d.map_src }}"
+            src="{{ d.map_src | escape }}"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             title="{{ d.company_name | escape }} 所在地">

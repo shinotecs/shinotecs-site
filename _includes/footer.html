@@ -19,7 +19,7 @@
         <div class="footer-col">
           <h5>Site</h5>
           <ul>
-            {% for l in d.links %}<li><a href="{{ l.url }}">{{ l.label | escape }}</a></li>
+            {% for l in d.links %}<li><a href="{{ l.url | escape }}">{{ l.label | escape }}</a></li>
             {% endfor %}
           </ul>
         </div>

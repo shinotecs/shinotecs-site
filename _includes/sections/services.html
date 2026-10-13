@@ -22,7 +22,7 @@
           </p>
 
           <div class="service-card-cta">
-            <a href="{{ c.link_url }}" class="service-card-link">
+            <a href="{{ c.link_url | escape }}" class="service-card-link">
               {{ c.link_label | escape }}
               <span class="arrow">→</span>
             </a>
