@@ -1,0 +1,22 @@
+image: "/images/recruit.jpg"
+image_alt: "窓辺のノートとコーヒー"
+eyebrow: "Recruit"
+title: |-
+  人に寄り添う仕事を、
+  誠実に続けていくために。
+lead: "ご利用者様一人ひとりに丁寧に向き合う姿勢を大切にし、長く信頼を積み重ねていける組織を目指しています。未経験から専門職まで、それぞれの強みを活かせる環境です。"
+meta:
+  - label: "勤務時間"
+    value: "平日 9:00 – 18:00"
+  - label: "休日"
+    value: "土曜・日曜・祝日"
+roles:
+  - name: "営業職"
+  - name: "福祉用具専門相談員"
+  - name: |-
+      介護支援専門員
+      (ケアマネジャー)
+cta1_label: "採用サイトを見る"
+cta1_url: "https://shinotecs.jbplt.jp/"
+cta2_label: "採用に関するお問い合わせ"
+cta2_url: "#contact"

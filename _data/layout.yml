@@ -1,0 +1,14 @@
+# 表示順（上から順に表示）。nav_label が空の区画はメニューに出ません
+sections:
+  - section: hero
+    nav_label: ""
+  - section: services
+    nav_label: "事業"
+  - section: recruit
+    nav_label: "採用"
+  - section: access
+    nav_label: "アクセス"
+  - section: contact
+    nav_label: ""
+  - section: company
+    nav_label: "会社概要"

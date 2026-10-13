@@ -1,0 +1,11 @@
+title: シノテクス株式会社
+lang: ja
+encoding: utf-8
+# 公開しない内部資料
+exclude:
+  - "*.md"
+  - "SEO戦略・運用ガイド.md"
+  - "Google_SearchConsole_Analytics_設定手順.md"
+  - Gemfile
+  - Gemfile.lock
+  - node_modules

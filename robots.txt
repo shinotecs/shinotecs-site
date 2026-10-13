@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
 
 Sitemap: https://shinotecs.github.io/shinotecs-site/sitemap.xml

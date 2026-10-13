@@ -1,25 +1,27 @@
+---
+---
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>シノテクス株式会社 | 福祉用具レンタル・居宅介護支援 | 埼玉県坂戸市</title>
-  <meta name="description" content="埼玉県坂戸市の介護福祉会社、シノテクス株式会社。福祉用具レンタル・販売、居宅介護支援、住宅改修まで一貫対応。坂戸市・鶴ヶ島市・川越市・入間市など埼玉県西部地域でご相談を承っています。" />
+  <title>{{ site.data.site_meta.title | escape }}</title>
+  <meta name="description" content="{{ site.data.site_meta.description | escape }}" />
 
   <link rel="canonical" href="https://www.shinotecs.com/" />
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.shinotecs.com/">
-  <meta property="og:title" content="シノテクス株式会社 | 福祉用具レンタル・居宅介護支援 | 埼玉県坂戸市">
-  <meta property="og:description" content="埼玉県坂戸市の介護福祉会社。福祉用具レンタル・販売、居宅介護支援、住宅改修まで一貫対応。坂戸市・鶴ヶ島市・川越市・入間市など埼玉県西部地域に。">
+  <meta property="og:title" content="{{ site.data.site_meta.title | escape }}">
+  <meta property="og:description" content="{{ site.data.site_meta.og_description | escape }}">
   <meta property="og:site_name" content="シノテクス株式会社">
   <meta property="og:image" content="https://www.shinotecs.com/ogp.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="シノテクス株式会社 | 福祉用具レンタル・居宅介護支援 | 坂戸市">
-  <meta name="twitter:description" content="埼玉県坂戸市の介護福祉会社。福祉用具レンタル・販売、居宅介護支援まで。">
+  <meta name="twitter:title" content="{{ site.data.site_meta.twitter_title | escape }}">
+  <meta name="twitter:description" content="{{ site.data.site_meta.twitter_description | escape }}">
   <meta name="twitter:image" content="https://www.shinotecs.com/ogp.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,9 +60,9 @@
     "logo": "https://www.shinotecs.com/02_symbol.svg",
     "image": "https://www.shinotecs.com/ogp.jpg",
     "description": "シノテクス株式会社は、福祉用具のレンタル・販売から居宅介護支援まで、地域の医療・福祉・保健の分野を通し、地域社会の貢献と発展を目指します。",
-    "telephone": "+81-49-227-3475",
-    "faxNumber": "+81-49-227-3476",
-    "email": "info@shinotecs.com",
+    "telephone": "{{ site.data.global.tel_intl }}",
+    "faxNumber": "{{ site.data.global.fax_intl }}",
+    "email": "{{ site.data.global.email }}",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "千代田1-1-29 第5武井ビル202",
@@ -77,8 +79,8 @@
     "openingHoursSpecification": [{
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "09:00",
-      "closes": "18:00"
+      "opens": "{% if site.data.global.open.size == 4 %}0{% endif %}{{ site.data.global.open }}",
+      "closes": "{% if site.data.global.close.size == 4 %}0{% endif %}{{ site.data.global.close }}"
     }],
     "foundingDate": "2014-03-12",
     "founder": {
@@ -122,10 +124,8 @@
         </span>
       </a>
       <ul class="nav-links">
-        <li><a href="#services">事業</a></li>
-        <li><a href="#recruit">採用</a></li>
-        <li><a href="#access">アクセス</a></li>
-        <li><a href="#company">会社概要</a></li>
+        {% for s in site.data.layout.sections %}{% if s.nav_label and s.nav_label != "" %}<li><a href="#{% if s.section == 'hero' %}top{% else %}{{ s.section }}{% endif %}">{{ s.nav_label | escape }}</a></li>
+        {% endif %}{% endfor %}
       </ul>
       <a href="#contact" class="nav-cta">お問い合わせ</a>
       <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="navDrawer">≡</button>
@@ -135,417 +135,18 @@
   <!-- Mobile drawer -->
   <nav class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="モバイルメニュー">
     <ul>
-      <li><a href="#services" data-close>事業</a></li>
-      <li><a href="#recruit" data-close>採用</a></li>
-      <li><a href="#access" data-close>アクセス</a></li>
-      <li><a href="#company" data-close>会社概要</a></li>
+      {% for s in site.data.layout.sections %}{% if s.nav_label and s.nav_label != "" %}<li><a href="#{% if s.section == 'hero' %}top{% else %}{{ s.section }}{% endif %}" data-close>{{ s.nav_label | escape }}</a></li>
+      {% endif %}{% endfor %}
     </ul>
     <a href="#contact" class="nav-drawer-cta" data-close>お問い合わせ</a>
   </nav>
 
   <main id="main">
-
-  <!-- Hero -->
-  <section class="hero" id="top">
-    <div class="container hero-grid">
-      <div class="hero-text">
-        <span class="eyebrow">Care &amp; Support</span>
-        <h1>
-          介護のはじまりに、<br>
-          <span class="accent">確かな安心を。</span>
-        </h1>
-        <p class="lead">
-          福祉用具のレンタル・販売から居宅介護支援まで。<br>
-          地域の医療・福祉・保健の分野を通し、<br>
-          一人ひとりの暮らしに寄り添い、丁寧にお届けします。
-        </p>
-        <div class="hero-ctas">
-          <a href="#services" class="btn btn-primary">
-            事業内容を見る
-            <span class="arrow">→</span>
-          </a>
-          <a href="#contact" class="btn btn-secondary">
-            ご相談・お問い合わせ
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-visual">
-        <img src="hero.jpg" alt="窓辺の椅子と植物" style="aspect-ratio: 4/5; object-fit: cover; width: 100%; border-radius: 4px;">
-      </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section class="section services" id="services">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Our Services</span>
-        <h2>暮らしを支える、<br>2つの事業</h2>
-        <p>
-          ご利用者様の生活を支えるために、福祉用具と居宅介護支援を二本柱として、
-          必要な場面に必要な支援が届くよう体制を整えています。
-        </p>
-      </div>
-
-      <div class="service-grid">
-        <!-- 福祉用具事業 -->
-        <article class="service-card reveal">
-          <img src="service-equipment.jpg" alt="木の杖を握る手" style="aspect-ratio: 16/10; object-fit: cover; width: 100%; margin-bottom: 32px; border-radius: 4px;">
-
-          <p class="service-num">01 — Welfare Equipment</p>
-          <h3>福祉用具事業</h3>
-          <p class="desc">
-            車いす、特殊寝台、歩行器などの福祉用具のレンタル・販売から、
-            高度管理医療機器の販売・賃貸、住宅改修のご相談まで、
-            日々の生活を多面的に支えるご提案を行っています。
-          </p>
-
-          <div class="service-card-cta">
-            <a href="welfare.html" class="service-card-link">
-              福祉用具レンタル・販売の詳細を見る
-              <span class="arrow">→</span>
-            </a>
-          </div>
-
-          <div class="service-meta">
-            <span class="service-meta-label">福祉用具貸与事業所<br>「シノテクス株式会社」</span>
-            <span class="service-meta-num">No. 1176001020</span>
-          </div>
-        </article>
-
-        <!-- 居宅介護支援事業 -->
-        <article class="service-card reveal">
-          <img src="service-care.jpg" alt="ケアプラン作成の書類とペン" style="aspect-ratio: 16/10; object-fit: cover; width: 100%; margin-bottom: 32px; border-radius: 4px;">
-
-          <p class="service-num">02 — Care Management</p>
-          <h3>居宅介護支援事業</h3>
-          <p class="desc">
-            居宅介護支援事業所「ピオ」は、介護保険サービスを通じて、
-            ご自宅で安心して暮らせるよう支援します。
-            ご希望や生活状況に合わせて、必要なサービスを一緒に考えます。
-          </p>
-
-          <div class="service-card-cta">
-            <a href="pio.html" class="service-card-link">
-              居宅介護支援「ピオ」の詳細を見る
-              <span class="arrow">→</span>
-            </a>
-          </div>
-
-          <div class="service-meta">
-            <span class="service-meta-label">居宅介護支援事業所<br>「ピオ」</span>
-            <span class="service-meta-num">No. 1176001558</span>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Recruit -->
-  <section class="section recruit" id="recruit">
-    <div class="container">
-      <div class="recruit-grid">
-        <div class="recruit-visual reveal">
-          <img src="recruit.jpg" alt="窓辺のノートとコーヒー" style="aspect-ratio: 4/5; object-fit: cover; width: 100%; border-radius: 4px;">
-        </div>
-
-        <div class="recruit-text reveal">
-          <span class="eyebrow">Recruit</span>
-          <h2>
-            人に寄り添う仕事を、<br>
-            誠実に続けていくために。
-          </h2>
-          <p class="lead">
-            ご利用者様一人ひとりに丁寧に向き合う姿勢を大切にし、
-            長く信頼を積み重ねていける組織を目指しています。
-            未経験から専門職まで、それぞれの強みを活かせる環境です。
-          </p>
-
-          <div class="recruit-meta">
-            <div class="recruit-meta-item">
-              勤務時間
-              <strong>平日 9:00 – 18:00</strong>
-            </div>
-            <div class="recruit-meta-item">
-              休日
-              <strong>土曜・日曜・祝日</strong>
-            </div>
-          </div>
-
-          <div class="recruit-roles">
-            <div class="role-item">
-              <span class="role-item-num">Role 01</span>
-              営業職
-            </div>
-            <div class="role-item">
-              <span class="role-item-num">Role 02</span>
-              福祉用具専門相談員
-            </div>
-            <div class="role-item">
-              <span class="role-item-num">Role 03</span>
-              介護支援専門員<br>(ケアマネジャー)
-            </div>
-          </div>
-
-          <div class="hero-ctas">
-            <a href="https://shinotecs.jbplt.jp/" target="_blank" rel="noopener" class="btn btn-primary">
-              採用サイトを見る
-              <span class="arrow">→</span>
-            </a>
-            <a href="#contact" class="btn btn-secondary">
-              採用に関するお問い合わせ
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Access -->
-  <section class="section access" id="access">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Access</span>
-        <h2>事務所へのご来訪</h2>
-        <p>
-          事務所へお越しの際は、事前にご連絡をいただけますとスムーズにご案内できます。
-        </p>
-      </div>
-
-      <div class="access-grid">
-        <div class="access-map reveal">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3234.4!2d139.4771127!3d35.9568827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018d6f5a0ad2a1d%3A0x21f78a45e55b594!2z44K344OO44OG44Kv44K55qCq5byP5Lya56S-!5e0!3m2!1sja!2sjp!4v1717000000000"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="シノテクス株式会社 所在地">
-          </iframe>
-        </div>
-
-        <ul class="access-info-list reveal">
-          <li>
-            <span class="label">Address</span>
-            <span class="value">
-              <strong>シノテクス株式会社</strong>
-              〒350-0214<br>
-              埼玉県坂戸市千代田1-1-29<br>
-              第5武井ビル202
-            </span>
-          </li>
-          <li>
-            <span class="label">Contact</span>
-            <span class="value">
-              <strong>TEL 049-227-3475</strong>
-              FAX 049-227-3476<br>
-              info@shinotecs.com
-            </span>
-          </li>
-          <li>
-            <span class="label">Hours</span>
-            <span class="value">
-              <strong>平日 9:00 – 18:00</strong>
-              定休: 土曜・日曜・祝日
-            </span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="section contact" id="contact">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="section-head reveal" style="margin-bottom: 0;">
-          <span class="eyebrow">Contact</span>
-          <h2>ご相談は、<br>お気軽に。</h2>
-          <p>
-            ご利用者様、ご家族、病院・施設のご担当者様まで、
-            どなたにも安心してご相談いただけます。
-          </p>
-        </div>
-
-        <div class="contact-cards reveal">
-          <div class="contact-card">
-            <p class="contact-card-label">Tel</p>
-            <p class="contact-card-value">049-227-3475</p>
-            <p class="contact-card-note">受付: 平日 9:00 – 18:00</p>
-          </div>
-          <div class="contact-card">
-            <p class="contact-card-label">Fax</p>
-            <p class="contact-card-value">049-227-3476</p>
-            <p class="contact-card-note">24時間受付</p>
-          </div>
-          <div class="contact-card">
-            <p class="contact-card-label">E-mail</p>
-            <p class="contact-card-value contact-card-value--email">info@shinotecs.com</p>
-            <p class="contact-card-note">24時間受付・順次返信</p>
-          </div>
-          <div class="contact-hours">
-            <div>
-              <p class="contact-hours-label">Business Hours</p>
-              <p class="contact-hours-value">
-                平日 9:00 – 18:00 / 土日祝休
-              </p>
-            </div>
-            <a href="tel:049-227-3475" class="btn btn-primary">
-              いますぐ電話する
-              <span class="arrow">→</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Company -->
-  <section class="section company" id="company">
-    <div class="container company-grid">
-      <div class="reveal">
-        <span class="eyebrow">Company</span>
-        <h2>会社情報</h2>
-        <p class="company-mission">
-          地域の医療・福祉・保健の分野を通し、<br>
-          地域社会の貢献と発展をめざします。
-        </p>
-      </div>
-
-      <ul class="company-info-list reveal">
-        <li>
-          <span class="label">会社名</span>
-          <span class="value">シノテクス株式会社</span>
-        </li>
-        <li>
-          <span class="label">代表者</span>
-          <span class="value">代表取締役 篠 裕介</span>
-        </li>
-        <li>
-          <span class="label">所在地</span>
-          <span class="value">
-            〒350-0214<br>
-            埼玉県坂戸市千代田1-1-29 第5武井ビル202
-          </span>
-        </li>
-        <li>
-          <span class="label">設立</span>
-          <span class="value"><span class="value-num">2014年3月12日</span></span>
-        </li>
-        <li>
-          <span class="label">事業内容</span>
-          <span class="value">
-            福祉用具貸与及び販売事業<br>
-            高度管理医療機器等販売及び賃貸事業<br>
-            居宅介護支援事業<br>
-            住宅改修事業<br>
-            中古販売事業
-          </span>
-        </li>
-        <li>
-          <span class="label">許認可</span>
-          <span class="value">
-            介護保険指定事業者番号<br>
-            <span class="value-num">福祉用具貸与 No.1176001020</span><br>
-            <span class="value-num">居宅介護支援 No.1176001558</span><br>
-            高度管理医療機器等販売賃貸業許可証 <span class="value-num">第811920号</span><br>
-            古物商許可 <span class="value-num">第431110032515号</span><br>
-            適格請求書発行事業者登録番号 <span class="value-num">T3030001101956</span>
-          </span>
-        </li>
-        <li>
-          <span class="label">法人番号</span>
-          <span class="value"><span class="value-num">3030001101956</span></span>
-        </li>
-        <li>
-          <span class="label">取引銀行</span>
-          <span class="value">埼玉りそな銀行 / 埼玉縣信用金庫</span>
-        </li>
-        <li>
-          <span class="label">連絡先</span>
-          <span class="value">
-            <span class="value-num">TEL 049-227-3475</span><br>
-            <span class="value-num">FAX 049-227-3476</span><br>
-            info@shinotecs.com
-          </span>
-        </li>
-      </ul>
-    </div>
-  </section>
-
+{% for s in site.data.layout.sections %}{% if s.section == 'hero' %}{% include sections/hero.html %}{% elsif s.section == 'services' %}{% include sections/services.html %}{% elsif s.section == 'recruit' %}{% include sections/recruit.html %}{% elsif s.section == 'access' %}{% include sections/access.html %}{% elsif s.section == 'contact' %}{% include sections/contact.html %}{% elsif s.section == 'company' %}{% include sections/company.html %}{% endif %}
+{% endfor %}
   </main>
 
-  <!-- Footer -->
-  <footer role="contentinfo">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="logo">
-            <img src="02_symbol_white.svg" alt="" class="logo-symbol">
-            <span class="logo-text">
-              SHINOTECS
-              <small>Care &amp; Support</small>
-            </span>
-          </a>
-          <p>
-            地域の医療・福祉・保健の分野を通し、地域社会の貢献と発展をめざします。
-            福祉用具のレンタル・販売から居宅介護支援まで、確かな支援を丁寧にお届けします。
-          </p>
-        </div>
-
-        <div class="footer-col">
-          <h5>Site</h5>
-          <ul>
-            <li><a href="welfare.html">福祉用具事業</a></li>
-            <li><a href="pio.html">居宅介護支援事業</a></li>
-            <li><a href="#recruit">採用情報</a></li>
-            <li><a href="#access">アクセス</a></li>
-            <li><a href="#company">会社概要</a></li>
-            <li><a href="#contact">お問い合わせ</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h5>Contact</h5>
-          <ul>
-            <li>
-              〒350-0214<br>
-              埼玉県坂戸市千代田1-1-29<br>
-              第5武井ビル202
-            </li>
-            <li>TEL <span class="small">049-227-3475</span></li>
-            <li>FAX <span class="small">049-227-3476</span></li>
-            <li><span class="small">info@shinotecs.com</span></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h5>License</h5>
-          <ul>
-            <li>
-              福祉用具貸与事業所「シノテクス株式会社」
-              <span class="small">No. 1176001020</span>
-            </li>
-            <li>
-              居宅介護支援事業所「ピオ」
-              <span class="small">No. 1176001558</span>
-            </li>
-            <li>
-              高度管理医療機器等販売賃貸業
-              <span class="small">第811920号</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div class="footer-bottom-left">
-          <span>© 2026 SHINOTECS Co., Ltd. All Rights Reserved.</span>
-          <a href="privacy.html" class="footer-privacy-link">プライバシーポリシー</a>
-        </div>
-        <span class="footer-mark">Care &amp; Support</span>
-      </div>
-    </div>
-  </footer>
+{% include footer.html %}
 
   <script>
     // Scroll reveal

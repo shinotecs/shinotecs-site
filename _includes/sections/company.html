@@ -1,0 +1,23 @@
+{% assign d = site.data.company %}{% assign g = site.data.global %}
+  <!-- Company -->
+  <section class="section company" id="company">
+    <div class="container company-grid">
+      <div class="reveal">
+        <span class="eyebrow">{{ d.eyebrow | escape }}</span>
+        <h2>{{ d.title | escape }}</h2>
+        <p class="company-mission">
+          {{ d.mission | escape | newline_to_br }}
+        </p>
+      </div>
+
+      <ul class="company-info-list reveal">
+        {% for r in d.rows %}
+        {% assign addr = g.address | append: ' ' | append: g.building %}
+        <li>
+          <span class="label">{{ r.label | escape }}</span>
+          <span class="value">{{ r.value | escape | newline_to_br | replace: '[[', '<span class="value-num">' | replace: ']]', '</span>' | replace: '{TEL}', g.tel | replace: '{FAX}', g.fax | replace: '{EMAIL}', g.email | replace: '{POSTAL}', g.postal | replace: '{ADDRESS}', addr }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>

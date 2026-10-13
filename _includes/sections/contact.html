@@ -1,0 +1,45 @@
+{% assign d = site.data.contact %}{% assign g = site.data.global %}
+  <!-- Contact -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="section-head reveal" style="margin-bottom: 0;">
+          <span class="eyebrow">{{ d.eyebrow | escape }}</span>
+          <h2>{{ d.title | escape | newline_to_br }}</h2>
+          <p>
+            {{ d.lead | escape }}
+          </p>
+        </div>
+
+        <div class="contact-cards reveal">
+          <div class="contact-card">
+            <p class="contact-card-label">Tel</p>
+            <p class="contact-card-value">{{ g.tel | escape }}</p>
+            <p class="contact-card-note">{{ d.tel_note_prefix | escape }}{{ g.weekday_label }} {{ g.open }} – {{ g.close }}</p>
+          </div>
+          <div class="contact-card">
+            <p class="contact-card-label">Fax</p>
+            <p class="contact-card-value">{{ g.fax | escape }}</p>
+            <p class="contact-card-note">{{ d.fax_note | escape }}</p>
+          </div>
+          <div class="contact-card">
+            <p class="contact-card-label">E-mail</p>
+            <p class="contact-card-value contact-card-value--email">{{ g.email | escape }}</p>
+            <p class="contact-card-note">{{ d.email_note | escape }}</p>
+          </div>
+          <div class="contact-hours">
+            <div>
+              <p class="contact-hours-label">{{ d.hours_label | escape }}</p>
+              <p class="contact-hours-value">
+                {{ g.weekday_label }} {{ g.open }} – {{ g.close }} {{ d.hours_suffix | escape }}
+              </p>
+            </div>
+            <a href="tel:{{ g.tel }}" class="btn btn-primary">
+              {{ d.call_label | escape }}
+              <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

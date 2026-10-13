@@ -1,0 +1,39 @@
+{% assign d = site.data.services %}
+  <!-- Services -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">{{ d.eyebrow | escape }}</span>
+        <h2>{{ d.title | escape | newline_to_br }}</h2>
+        <p>
+          {{ d.lead | escape }}
+        </p>
+      </div>
+
+      <div class="service-grid">
+        {% for c in d.cards %}
+        <article class="service-card reveal">
+          <img src="{{ c.image }}" alt="{{ c.image_alt | escape }}" style="aspect-ratio: 16/10; object-fit: cover; width: 100%; margin-bottom: 32px; border-radius: 4px;">
+
+          <p class="service-num">{{ c.num | escape }}</p>
+          <h3>{{ c.title | escape }}</h3>
+          <p class="desc">
+            {{ c.desc | escape }}
+          </p>
+
+          <div class="service-card-cta">
+            <a href="{{ c.link_url }}" class="service-card-link">
+              {{ c.link_label | escape }}
+              <span class="arrow">→</span>
+            </a>
+          </div>
+
+          <div class="service-meta">
+            <span class="service-meta-label">{{ c.meta_label | escape | newline_to_br }}</span>
+            <span class="service-meta-num">{{ c.meta_num | escape }}</span>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>

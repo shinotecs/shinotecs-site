@@ -1,0 +1,13 @@
+# 全ページ共通の連絡先・営業時間（ここを直すと各所に反映）
+tel: "049-227-3475"
+tel_intl: "+81-49-227-3475"
+fax: "049-227-3476"
+fax_intl: "+81-49-227-3476"
+email: "info@shinotecs.com"
+postal: "350-0214"
+address: "埼玉県坂戸市千代田1-1-29"
+building: "第5武井ビル202"
+weekday_label: "平日"
+open: "9:00"
+close: "18:00"
+holiday_note: "定休: 土曜・日曜・祝日"

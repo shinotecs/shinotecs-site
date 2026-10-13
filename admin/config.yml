@@ -1,0 +1,192 @@
+backend:
+  name: github
+  repo: shinotecs/shinotecs-site
+  branch: main
+  commit_messages:
+    create: "HP編集: {{collection}} 追加 {{slug}}"
+    update: "HP編集: {{collection}} 更新"
+    delete: "HP編集: {{collection}} 削除"
+    uploadMedia: "HP編集: 画像追加 {{path}}"
+    deleteMedia: "HP編集: 画像削除 {{path}}"
+
+locale: ja
+site_url: https://www.shinotecs.com
+display_url: https://www.shinotecs.com
+media_folder: images
+public_folder: /images
+
+collections:
+  - name: pages
+    label: ホームページ
+    files:
+      - name: layout
+        label: ◆ 区画の並び順・メニュー
+        file: _data/layout.yml
+        fields:
+          - label: 区画（ドラッグで並べ替え／削除で非表示）
+            name: sections
+            widget: list
+            summary: "{{fields.section}}"
+            fields:
+              - label: 区画
+                name: section
+                widget: select
+                options:
+                  - { label: "トップ（キャッチコピー）", value: hero }
+                  - { label: "事業紹介", value: services }
+                  - { label: "採用", value: recruit }
+                  - { label: "アクセス", value: access }
+                  - { label: "お問い合わせ", value: contact }
+                  - { label: "会社情報", value: company }
+              - { label: "メニューの表示名（空欄ならメニューに出さない）", name: nav_label, widget: string, required: false }
+
+      - name: global
+        label: ◆ 電話・住所・営業時間（全体に反映）
+        file: _data/global.yml
+        fields:
+          - { label: 電話番号, name: tel, widget: string }
+          - { label: 電話番号（国際表記・検索エンジン用 例 +81-49-227-3475）, name: tel_intl, widget: string }
+          - { label: FAX番号, name: fax, widget: string }
+          - { label: FAX番号（国際表記）, name: fax_intl, widget: string }
+          - { label: メールアドレス, name: email, widget: string }
+          - { label: 郵便番号, name: postal, widget: string }
+          - { label: 住所, name: address, widget: string }
+          - { label: 建物名・部屋番号, name: building, widget: string }
+          - { label: 曜日の表記, name: weekday_label, widget: string }
+          - { label: 開始時刻（例 9:00）, name: open, widget: string }
+          - { label: 終了時刻（例 17:30）, name: close, widget: string }
+          - { label: 定休日の表記, name: holiday_note, widget: string }
+
+      - name: hero
+        label: 1. トップ（キャッチコピー・写真）
+        file: _data/hero.yml
+        fields:
+          - { label: 小見出し（英字）, name: eyebrow, widget: string }
+          - { label: キャッチコピー 1行目, name: title_line1, widget: string }
+          - { label: キャッチコピー 2行目（強調色）, name: title_accent, widget: string }
+          - { label: 説明文（改行はそのまま反映）, name: lead, widget: text }
+          - { label: ボタン1 文字, name: cta1_label, widget: string }
+          - { label: ボタン1 リンク, name: cta1_url, widget: string }
+          - { label: ボタン2 文字, name: cta2_label, widget: string }
+          - { label: ボタン2 リンク, name: cta2_url, widget: string }
+          - { label: 写真, name: image, widget: image }
+          - { label: 写真の説明（読み上げ用）, name: image_alt, widget: string }
+
+      - name: services
+        label: 2. 事業紹介
+        file: _data/services.yml
+        fields:
+          - { label: 小見出し（英字）, name: eyebrow, widget: string }
+          - { label: 見出し（改行可）, name: title, widget: text }
+          - { label: 説明文, name: lead, widget: text }
+          - label: 事業カード（ドラッグで並べ替え）
+            name: cards
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: 写真, name: image, widget: image }
+              - { label: 写真の説明, name: image_alt, widget: string }
+              - { label: 番号表記, name: num, widget: string }
+              - { label: 事業名, name: title, widget: string }
+              - { label: 説明文, name: desc, widget: text }
+              - { label: 詳細ページのリンク, name: link_url, widget: string }
+              - { label: 詳細リンクの文字, name: link_label, widget: string }
+              - { label: 事業所名（改行可）, name: meta_label, widget: text }
+              - { label: 事業所番号, name: meta_num, widget: string }
+
+      - name: recruit
+        label: 3. 採用
+        file: _data/recruit.yml
+        fields:
+          - { label: 写真, name: image, widget: image }
+          - { label: 写真の説明, name: image_alt, widget: string }
+          - { label: 小見出し（英字）, name: eyebrow, widget: string }
+          - { label: 見出し（改行可）, name: title, widget: text }
+          - { label: 説明文, name: lead, widget: text }
+          - label: 勤務時間・休日など
+            name: meta
+            widget: list
+            summary: "{{fields.label}}"
+            fields:
+              - { label: 項目名, name: label, widget: string }
+              - { label: 内容, name: value, widget: string }
+          - label: 募集職種（ドラッグで並べ替え）
+            name: roles
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: 職種名（改行可）, name: name, widget: text }
+          - { label: ボタン1 文字, name: cta1_label, widget: string }
+          - { label: ボタン1 リンク, name: cta1_url, widget: string }
+          - { label: ボタン2 文字, name: cta2_label, widget: string }
+          - { label: ボタン2 リンク, name: cta2_url, widget: string }
+
+      - name: access
+        label: 4. アクセス
+        file: _data/access.yml
+        fields:
+          - { label: 小見出し（英字）, name: eyebrow, widget: string }
+          - { label: 見出し, name: title, widget: string }
+          - { label: 説明文, name: lead, widget: text }
+          - { label: 会社名（住所欄の太字）, name: company_name, widget: string }
+          - { label: Google地図の埋め込みURL（通常は変更不要）, name: map_src, widget: text }
+
+      - name: contact
+        label: 5. お問い合わせ
+        file: _data/contact.yml
+        fields:
+          - { label: 小見出し（英字）, name: eyebrow, widget: string }
+          - { label: 見出し（改行可）, name: title, widget: text }
+          - { label: 説明文, name: lead, widget: text }
+          - { label: 電話の注記の頭（時間は共通設定から自動）, name: tel_note_prefix, widget: string }
+          - { label: FAXの注記, name: fax_note, widget: string }
+          - { label: メールの注記, name: email_note, widget: string }
+          - { label: 営業時間の見出し, name: hours_label, widget: string }
+          - { label: 営業時間の後ろの文字, name: hours_suffix, widget: string }
+          - { label: 電話ボタンの文字, name: call_label, widget: string }
+
+      - name: company
+        label: 6. 会社情報
+        file: _data/company.yml
+        fields:
+          - { label: 小見出し（英字）, name: eyebrow, widget: string }
+          - { label: 見出し, name: title, widget: string }
+          - { label: 理念文（改行可）, name: mission, widget: text }
+          - label: 会社情報の行（ドラッグで並べ替え）
+            name: rows
+            widget: list
+            summary: "{{fields.label}}"
+            fields:
+              - { label: 項目名, name: label, widget: string }
+              - { label: "内容（[[ ]]で囲むと数字書体／{TEL} {FAX} {EMAIL} {POSTAL} {ADDRESS} は共通情報に自動置換）", name: value, widget: text }
+
+      - name: footer
+        label: 7. フッター
+        file: _data/footer.yml
+        fields:
+          - { label: 会社説明文, name: brand_text, widget: text }
+          - label: サイトリンク
+            name: links
+            widget: list
+            summary: "{{fields.label}}"
+            fields:
+              - { label: 表示名, name: label, widget: string }
+              - { label: リンク先, name: url, widget: string }
+          - label: 許認可表示
+            name: licenses
+            widget: list
+            summary: "{{fields.text}}"
+            fields:
+              - { label: 名称, name: text, widget: string }
+              - { label: 番号, name: num, widget: string }
+          - { label: コピーライト, name: copyright, widget: string }
+
+      - name: meta
+        label: 8. 検索結果・SNSでの表示文
+        file: _data/site_meta.yml
+        fields:
+          - { label: ページタイトル, name: title, widget: string }
+          - { label: 検索結果の説明文, name: description, widget: text }
+          - { label: SNS共有の説明文, name: og_description, widget: text }
+          - { label: X(Twitter)用タイトル, name: twitter_title, widget: string }
+          - { label: X(Twitter)用説明文, name: twitter_description, widget: text }

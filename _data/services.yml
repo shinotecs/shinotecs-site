@@ -1,0 +1,28 @@
+eyebrow: "Our Services"
+title: |-
+  暮らしを支える、
+  2つの事業
+lead: "ご利用者様の生活を支えるために、福祉用具と居宅介護支援を二本柱として、必要な場面に必要な支援が届くよう体制を整えています。"
+cards:
+  - image: "/images/service-equipment.jpg"
+    image_alt: "木の杖を握る手"
+    num: "01 — Welfare Equipment"
+    title: "福祉用具事業"
+    desc: "車いす、特殊寝台、歩行器などの福祉用具のレンタル・販売から、高度管理医療機器の販売・賃貸、住宅改修のご相談まで、日々の生活を多面的に支えるご提案を行っています。"
+    link_url: "welfare.html"
+    link_label: "福祉用具レンタル・販売の詳細を見る"
+    meta_label: |-
+      福祉用具貸与事業所
+      「シノテクス株式会社」
+    meta_num: "No. 1176001020"
+  - image: "/images/service-care.jpg"
+    image_alt: "ケアプラン作成の書類とペン"
+    num: "02 — Care Management"
+    title: "居宅介護支援事業"
+    desc: "居宅介護支援事業所「ピオ」は、介護保険サービスを通じて、ご自宅で安心して暮らせるよう支援します。ご希望や生活状況に合わせて、必要なサービスを一緒に考えます。"
+    link_url: "pio.html"
+    link_label: "居宅介護支援「ピオ」の詳細を見る"
+    meta_label: |-
+      居宅介護支援事業所
+      「ピオ」
+    meta_num: "No. 1176001558"

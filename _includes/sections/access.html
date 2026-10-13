@@ -1,0 +1,51 @@
+{% assign d = site.data.access %}{% assign g = site.data.global %}
+  <!-- Access -->
+  <section class="section access" id="access">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">{{ d.eyebrow | escape }}</span>
+        <h2>{{ d.title | escape }}</h2>
+        <p>
+          {{ d.lead | escape }}
+        </p>
+      </div>
+
+      <div class="access-grid">
+        <div class="access-map reveal">
+          <iframe
+            src="{{ d.map_src }}"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="{{ d.company_name | escape }} 所在地">
+          </iframe>
+        </div>
+
+        <ul class="access-info-list reveal">
+          <li>
+            <span class="label">Address</span>
+            <span class="value">
+              <strong>{{ d.company_name | escape }}</strong>
+              〒{{ g.postal | escape }}<br>
+              {{ g.address | escape }}<br>
+              {{ g.building | escape }}
+            </span>
+          </li>
+          <li>
+            <span class="label">Contact</span>
+            <span class="value">
+              <strong>TEL {{ g.tel | escape }}</strong>
+              FAX {{ g.fax | escape }}<br>
+              {{ g.email | escape }}
+            </span>
+          </li>
+          <li>
+            <span class="label">Hours</span>
+            <span class="value">
+              <strong>{{ g.weekday_label }} {{ g.open }} – {{ g.close }}</strong>
+              {{ g.holiday_note | escape }}
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>

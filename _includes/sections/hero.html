@@ -1,0 +1,29 @@
+{% assign d = site.data.hero %}
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <span class="eyebrow">{{ d.eyebrow | escape }}</span>
+        <h1>
+          {{ d.title_line1 | escape }}<br>
+          <span class="accent">{{ d.title_accent | escape }}</span>
+        </h1>
+        <p class="lead">
+          {{ d.lead | escape | newline_to_br }}
+        </p>
+        <div class="hero-ctas">
+          <a href="{{ d.cta1_url }}" class="btn btn-primary">
+            {{ d.cta1_label | escape }}
+            <span class="arrow">→</span>
+          </a>
+          <a href="{{ d.cta2_url }}" class="btn btn-secondary">
+            {{ d.cta2_label | escape }}
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <img src="{{ d.image }}" alt="{{ d.image_alt | escape }}" style="aspect-ratio: 4/5; object-fit: cover; width: 100%; border-radius: 4px;">
+      </div>
+    </div>
+  </section>

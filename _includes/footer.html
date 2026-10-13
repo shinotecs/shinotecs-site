@@ -1,0 +1,62 @@
+{% assign d = site.data.footer %}{% assign g = site.data.global %}
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="02_symbol_white.svg" alt="" class="logo-symbol">
+            <span class="logo-text">
+              SHINOTECS
+              <small>Care &amp; Support</small>
+            </span>
+          </a>
+          <p>
+            {{ d.brand_text | escape }}
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Site</h5>
+          <ul>
+            {% for l in d.links %}<li><a href="{{ l.url }}">{{ l.label | escape }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li>
+              〒{{ g.postal | escape }}<br>
+              {{ g.address | escape }}<br>
+              {{ g.building | escape }}
+            </li>
+            <li>TEL <span class="small">{{ g.tel | escape }}</span></li>
+            <li>FAX <span class="small">{{ g.fax | escape }}</span></li>
+            <li><span class="small">{{ g.email | escape }}</span></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>License</h5>
+          <ul>
+            {% for l in d.licenses %}
+            <li>
+              {{ l.text | escape }}
+              <span class="small">{{ l.num | escape }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">
+          <span>{{ d.copyright | escape }}</span>
+          <a href="privacy.html" class="footer-privacy-link">プライバシーポリシー</a>
+        </div>
+        <span class="footer-mark">Care &amp; Support</span>
+      </div>
+    </div>
+  </footer>

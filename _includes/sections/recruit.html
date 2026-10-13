@@ -1,0 +1,49 @@
+{% assign d = site.data.recruit %}
+  <!-- Recruit -->
+  <section class="section recruit" id="recruit">
+    <div class="container">
+      <div class="recruit-grid">
+        <div class="recruit-visual reveal">
+          <img src="{{ d.image }}" alt="{{ d.image_alt | escape }}" style="aspect-ratio: 4/5; object-fit: cover; width: 100%; border-radius: 4px;">
+        </div>
+
+        <div class="recruit-text reveal">
+          <span class="eyebrow">{{ d.eyebrow | escape }}</span>
+          <h2>
+            {{ d.title | escape | newline_to_br }}
+          </h2>
+          <p class="lead">
+            {{ d.lead | escape }}
+          </p>
+
+          <div class="recruit-meta">
+            {% for m in d.meta %}
+            <div class="recruit-meta-item">
+              {{ m.label | escape }}
+              <strong>{{ m.value | escape }}</strong>
+            </div>
+            {% endfor %}
+          </div>
+
+          <div class="recruit-roles">
+            {% for r in d.roles %}
+            <div class="role-item">
+              <span class="role-item-num">Role {% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+              {{ r.name | escape | newline_to_br }}
+            </div>
+            {% endfor %}
+          </div>
+
+          <div class="hero-ctas">
+            <a href="{{ d.cta1_url }}" target="_blank" rel="noopener" class="btn btn-primary">
+              {{ d.cta1_label | escape }}
+              <span class="arrow">→</span>
+            </a>
+            <a href="{{ d.cta2_url }}" class="btn btn-secondary">
+              {{ d.cta2_label | escape }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
