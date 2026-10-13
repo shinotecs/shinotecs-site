@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 
-Sitemap: https://shinotecs.github.io/shinotecs-site/sitemap.xml
+Sitemap: https://www.shinotecs.com/sitemap.xml
