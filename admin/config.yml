@@ -14,6 +14,14 @@ site_url: https://www.shinotecs.com
 display_url: https://www.shinotecs.com
 media_folder: images
 public_folder: /images
+media_library:
+  name: default
+  config:
+    transformations:
+      raster_image:
+        format: webp
+        quality: 80
+        width: 1600
 
 collections:
   - name: pages
