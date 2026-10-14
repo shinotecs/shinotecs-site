@@ -120,7 +120,7 @@
   ['hero', 'services', 'recruit', 'access', 'contact', 'company', 'footer', 'global', 'layout', 'meta'].forEach(function (k) {
     root.CMS.registerPreviewTemplate(k, makeTemplate(k));
   });
-  root.CMS.registerPreviewStyle('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&display=swap', { raw: false });
+  root.CMS.registerPreviewStyle('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap', { raw: false });
   root.CMS.registerPreviewStyle('/style.css');
   root.CMS.registerPreviewStyle('.reveal{opacity:1!important;transform:none!important}.preview-wrap{background:#FAF7F2}.hero{padding-top:40px}', { raw: true });
 })(typeof window !== 'undefined' ? window : globalThis);

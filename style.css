@@ -64,9 +64,9 @@ select:focus-visible,
   --accent: #8B6B47;
   --accent-soft: #BEA688;
 
-  --font-jp-display: 'Shippori Mincho B1', 'Noto Serif JP', serif;
+  --font-jp-display: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif;
   --font-jp: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif;
-  --font-lt: 'Fraunces', 'Shippori Mincho B1', serif;
+  --font-lt: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif;
 
   --max-w: 1240px;
   --pad-x: clamp(20px, 5vw, 64px);
@@ -88,7 +88,6 @@ body {
 /* ========== Eyebrow (small italic English label) ========== */
 .eyebrow {
   font-family: var(--font-lt);
-  font-style: italic;
   font-size: 12.5px;
   font-weight: 400;
   letter-spacing: 0.08em;
@@ -149,8 +148,7 @@ body {
   color: var(--muted);
   margin-top: 3px;
   font-weight: 400;
-  font-style: italic;
-}
+  }
 .nav-links {
   display: flex;
   align-items: center;
@@ -254,7 +252,6 @@ body {
 }
 .img-slot__label {
   font-family: var(--font-lt);
-  font-style: italic;
   font-size: 12px;
   letter-spacing: 0.12em;
   font-weight: 400;
@@ -317,9 +314,9 @@ body {
 .hero h1 {
   font-family: var(--font-jp-display);
   font-weight: 500;
-  font-size: clamp(34px, 5vw, 56px);
+  font-size: clamp(30px, 4vw, 48px);
   line-height: 1.32;
-  letter-spacing: 0.01em;
+  letter-spacing: 0;
   color: var(--ink);
   margin: 24px 0 28px;
 }
@@ -368,7 +365,6 @@ body {
 .page-hero-visual .img-slot { aspect-ratio: 4 / 5; }
 .breadcrumb {
   font-family: var(--font-lt);
-  font-style: italic;
   font-size: 12.5px;
   color: var(--muted);
   margin-bottom: 14px;
@@ -435,7 +431,6 @@ body {
 }
 .service-num {
   font-family: var(--font-lt);
-  font-style: italic;
   font-size: 14px;
   font-weight: 400;
   color: var(--accent);
@@ -525,7 +520,6 @@ body {
 }
 .detail-card-num {
   font-family: var(--font-lt);
-  font-style: italic;
   font-size: 13px;
   color: var(--accent);
   letter-spacing: 0.05em;
@@ -562,7 +556,6 @@ body {
 }
 .flow-step-num {
   font-family: var(--font-lt);
-  font-style: italic;
   font-size: 13px;
   color: var(--muted);
   letter-spacing: 0.05em;
@@ -612,7 +605,7 @@ body {
 .recruit h2 {
   font-family: var(--font-jp-display);
   font-weight: 400;
-  font-size: clamp(28px, 3.8vw, 44px);
+  font-size: clamp(26px, 3vw, 36px);
   line-height: 1.45;
   letter-spacing: 0.02em;
   margin: 22px 0 28px;
@@ -649,7 +642,6 @@ body {
 }
 .point-num, .role-item-num {
   font-family: var(--font-lt);
-  font-style: italic;
   font-size: 13px;
   color: var(--accent-soft);
   letter-spacing: 0.05em;
@@ -756,7 +748,6 @@ body {
 .access-info-list li:last-child { border-bottom: none; }
 .access-info-list .label {
   font-family: var(--font-lt);
-  font-style: italic;
   font-size: 12px;
   color: var(--muted);
   letter-spacing: 0.05em;
@@ -796,7 +787,6 @@ body {
 }
 .contact-card-label {
   font-family: var(--font-lt);
-  font-style: italic;
   font-size: 12px;
   color: var(--accent);
   letter-spacing: 0.05em;
@@ -838,7 +828,6 @@ body {
 }
 .contact-hours-label {
   font-family: var(--font-lt);
-  font-style: italic;
   font-size: 12px;
   color: var(--accent-soft);
   letter-spacing: 0.05em;
@@ -933,7 +922,7 @@ body {
 .info-strip-list { list-style: none; }
 .info-strip-list li {
   display: grid;
-  grid-template-columns: 140px 1fr;
+  grid-template-columns: 140px minmax(0, 1fr);
   gap: 24px;
   padding: 18px 0;
   border-bottom: 1px solid rgba(255,255,255,0.12);
@@ -947,6 +936,7 @@ body {
   letter-spacing: 0.05em;
 }
 .info-strip-list .value {
+  overflow-wrap: anywhere;
   color: var(--bg);
   line-height: 1.85;
 }
@@ -1025,7 +1015,6 @@ body {
 }
 .note-line-label {
   font-family: var(--font-lt);
-  font-style: italic;
   font-size: 12px;
   color: var(--accent);
   letter-spacing: 0.08em;
@@ -1058,7 +1047,6 @@ footer {
 }
 .footer-col h5 {
   font-family: var(--font-lt);
-  font-style: italic;
   font-size: 13px;
   font-weight: 400;
   letter-spacing: 0.05em;
@@ -1094,8 +1082,7 @@ footer {
 }
 .footer-bottom .footer-mark {
   font-family: var(--font-lt);
-  font-style: italic;
-}
+  }
 
 /* ========== Related Service (Cross-link) ========== */
 .related-service {
@@ -1143,7 +1130,6 @@ footer {
 }
 .related-link .arrow {
   font-family: var(--font-lt);
-  font-style: italic;
   color: var(--accent);
   transition: transform 0.3s ease;
 }
@@ -1306,7 +1292,6 @@ footer {
 }
 .faq-q-label {
   font-family: var(--font-lt);
-  font-style: italic;
   font-weight: 400;
   color: var(--accent);
   font-size: 16px;
@@ -1468,7 +1453,6 @@ footer {
 }
 .eq-block-eyebrow {
   font-family: var(--font-lt);
-  font-style: italic;
   font-size: 13px;
   font-weight: 400;
   letter-spacing: 0.1em;
@@ -1615,7 +1599,6 @@ footer {
 }
 .ren-num {
   font-family: var(--font-lt);
-  font-style: italic;
   font-size: 11px;
   font-weight: 400;
   color: var(--accent);
@@ -1657,3 +1640,5 @@ footer {
 }
 
 @media (min-width: 761px) and (max-width: 1000px) { .recruit-points { grid-template-columns: repeat(2, 1fr); } }
+
+@media (max-width: 560px) { .info-strip-list li { grid-template-columns: 1fr; gap: 6px; } .info-strip-list .value-num { white-space: normal; } }
