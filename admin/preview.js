@@ -3,8 +3,8 @@
 (function (root) {
   var esc = function (s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); };
   var br = function (s) { return esc(s).replace(/\n/g, '<br>'); };
-  var DEF_G = { tel: '', fax: '', email: '', postal: '', address: '', building: '', weekday_label: '平日', open: '', close: '', holiday_note: '' };
-  var hours = function (g) { return esc(g.weekday_label) + ' ' + esc(g.open) + ' – ' + esc(g.close); };
+  var DEF_G = { tel: '', fax: '', email: '', postal: '', address: '', building: '', weekday_label: '平日', open: '', close: '', hours_text: '', holiday_note: '' };
+  var hours = function (g) { return esc(g.hours_text); };
   var arr = function (x) { return Array.isArray(x) ? x : []; };
 
   var B = {};

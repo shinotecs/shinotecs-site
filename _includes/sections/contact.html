@@ -15,7 +15,7 @@
           <div class="contact-card">
             <p class="contact-card-label">Tel</p>
             <p class="contact-card-value">{{ g.tel | escape }}</p>
-            <p class="contact-card-note">{{ d.tel_note_prefix | escape }}{{ g.weekday_label }} {{ g.open }} – {{ g.close }}</p>
+            <p class="contact-card-note">{{ d.tel_note_prefix | escape }}{{ g.hours_text | escape }}</p>
           </div>
           <div class="contact-card">
             <p class="contact-card-label">Fax</p>
@@ -31,7 +31,7 @@
             <div>
               <p class="contact-hours-label">{{ d.hours_label | escape }}</p>
               <p class="contact-hours-value">
-                {{ g.weekday_label }} {{ g.open }} – {{ g.close }} {{ d.hours_suffix | escape }}
+                {{ g.hours_text | escape }} {{ d.hours_suffix | escape }}
               </p>
             </div>
             <a href="tel:{{ g.tel }}" class="btn btn-primary">

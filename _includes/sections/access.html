@@ -41,7 +41,7 @@
           <li>
             <span class="label">Hours</span>
             <span class="value">
-              <strong>{{ g.weekday_label }} {{ g.open }} – {{ g.close }}</strong>
+              <strong>{{ g.hours_text | escape }}</strong>
               {{ g.holiday_note | escape }}
             </span>
           </li>

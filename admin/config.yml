@@ -63,6 +63,7 @@ collections:
           - { label: 曜日の表記, name: weekday_label, widget: string }
           - { label: 開始時刻（例 9:00）, name: open, widget: string }
           - { label: 終了時刻（例 17:30）, name: close, widget: string }
+          - { label: 電話受付時間の表示文（ページに出る文。事業所ごとに記載）, name: hours_text, widget: string }
           - { label: 定休日の表記, name: holiday_note, widget: string }
 
       - name: hero
