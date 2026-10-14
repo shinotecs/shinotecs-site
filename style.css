@@ -857,7 +857,7 @@ body {
 }
 
 /* ========== Company info ========== */
-.company { background: var(--bg); }
+.company { background: var(--bg-soft); }
 .company-grid {
   display: grid;
   grid-template-columns: 1fr 1.4fr;

@@ -4,11 +4,11 @@ sections:
     nav_label: ""
   - section: services
     nav_label: "事業"
+  - section: company
+    nav_label: "会社概要"
   - section: recruit
     nav_label: "採用"
   - section: access
     nav_label: "アクセス"
   - section: contact
     nav_label: ""
-  - section: company
-    nav_label: "会社概要"
