@@ -1661,3 +1661,13 @@ p, li, .value, .recruit-meta-item strong { text-wrap: pretty; }
   #partner span[style*="absolute"] { display: none; }
 }
 #cost-zero li { text-wrap: balance; }
+
+/* ========== 文字サイズの下限（読みやすさ） ========== */
+.eq-note, .ren-desc, .contact-card-note, .cta-band-tel-note, .area-list-note, .recruit-note, .footer-brand p, .footer-col .small, .service-meta, .recruit-meta-item, .eq-note-bar, .breadcrumb, .company-info-list .label, .info-strip-list .label, .access-info-list .label, .footer-bottom, .footer-privacy-link { font-size: 13px; }
+.eq-name { font-size: 14px; }
+.eyebrow, .role-status, .contact-card-label, .contact-hours-label, .note-line-label, .eq-badge, .ren-num, .img-slot__label, .img-slot__hint { font-size: 12.5px; }
+.logo-text small { font-size: 11px; }
+@media (max-width: 560px) { .logo-text small { font-size: 10.5px; } }
+.eq-name, .eq-note { text-wrap: balance; word-break: auto-phrase; }
+.eq-name, .eq-note { word-break: normal; }
+.detail-grid > .detail-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
