@@ -1642,3 +1642,22 @@ footer {
 @media (min-width: 761px) and (max-width: 1000px) { .recruit-points { grid-template-columns: repeat(2, 1fr); } }
 
 @media (max-width: 560px) { .info-strip-list li { grid-template-columns: 1fr; gap: 6px; } .info-strip-list .value-num { white-space: normal; } }
+
+/* ========== 文字組み（改行・禁則の整え） ========== */
+html { line-break: strict; }
+body { word-break: auto-phrase; }
+h1, h2, h3, h4, .eq-note, .eq-name, .ren-title, .ren-desc, .service-card-link, .related-link, .point-item strong, .role-item strong { text-wrap: balance; }
+p, li, .value, .recruit-meta-item strong { text-wrap: pretty; }
+.contact-hours .btn { white-space: nowrap; flex-shrink: 0; }
+.contact-hours { flex-wrap: wrap; gap: 16px 24px; }
+.contact-cards .contact-card-value { font-size: 16px; letter-spacing: 0; }
+.contact-cards .contact-card:nth-child(3) .contact-card-value { font-size: 13px; }
+
+#care-services p, #partner p, #partner div { text-wrap: balance; }
+#care-services div[style*="auto-fill"] { grid-template-columns: repeat(4, 1fr) !important; }
+@media (max-width: 900px) { #care-services div[style*="auto-fill"] { grid-template-columns: repeat(2, 1fr) !important; } }
+@media (max-width: 560px) {
+  #partner div[style*="repeat(4,1fr)"] { grid-template-columns: repeat(2, 1fr) !important; row-gap: 16px !important; }
+  #partner span[style*="absolute"] { display: none; }
+}
+#cost-zero li { text-wrap: balance; }
