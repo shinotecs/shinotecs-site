@@ -3,11 +3,11 @@ sections:
   - section: hero
     nav_label: ""
   - section: services
-    nav_label: "事業"
+    nav_label: "事業内容"
   - section: company
     nav_label: "会社概要"
   - section: recruit
-    nav_label: "採用"
+    nav_label: "採用情報"
   - section: access
     nav_label: "アクセス"
   - section: contact

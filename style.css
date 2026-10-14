@@ -156,7 +156,7 @@ body {
   list-style: none;
 }
 .nav-links a {
-  font-size: 13.5px;
+  font-size: 15px;
   color: var(--ink-soft);
   font-weight: 500;
   position: relative;
