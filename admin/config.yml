@@ -111,6 +111,70 @@ collections:
           - { label: 小見出し（英字）, name: eyebrow, widget: string }
           - { label: 見出し（改行可）, name: title, widget: text }
           - { label: 説明文, name: lead, widget: text }
+          - { label: 見出し（働き方の特徴）, name: points_title, widget: string }
+          - label: 働き方の特徴カード（ドラッグで並べ替え）
+            name: points
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: タイトル, name: title, widget: string }
+              - { label: 説明, name: text, widget: text }
+          - { label: 見出し（募集職種）, name: roles_title, widget: string }
+          - label: 募集職種（ドラッグで並べ替え）
+            name: roles
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: 職種名（改行可）, name: name, widget: text }
+              - { label: 仕事内容の説明, name: desc, widget: text }
+              - { label: 状態（例：募集中／現在は募集していません）, name: status, widget: string }
+          - { label: 見出し（働く条件）, name: meta_title, widget: string }
+          - label: 働く条件（給与・休日・勤務時間など）
+            name: meta
+            widget: list
+            summary: "{{fields.label}}"
+            fields:
+              - { label: 項目名, name: label, widget: string }
+              - { label: 内容, name: value, widget: string }
+          - { label: 条件の補足文, name: meta_note, widget: string }
+          - { label: ボタン1 文字, name: cta1_label, widget: string }
+          - { label: ボタン1 リンク, name: cta1_url, widget: string }
+          - { label: ボタン2 文字, name: cta2_label, widget: string }
+          - { label: ボタン2 リンク, name: cta2_url, widget: string }
+          - { label: 写真, name: image, widget: image }
+          - { label: 写真の説明（読み上げ用）, name: image_alt, widget: string }
+
+      - name: services
+        label: 2. 事業紹介
+        file: _data/services.yml
+        fields:
+          - { label: 小見出し（英字）, name: eyebrow, widget: string }
+          - { label: 見出し（改行可）, name: title, widget: text }
+          - { label: 説明文, name: lead, widget: text }
+          - label: 事業カード（ドラッグで並べ替え）
+            name: cards
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: 写真, name: image, widget: image }
+              - { label: 写真の説明, name: image_alt, widget: string }
+              - { label: 番号表記, name: num, widget: string }
+              - { label: 事業名, name: title, widget: string }
+              - { label: 説明文, name: desc, widget: text }
+              - { label: 詳細ページのリンク, name: link_url, widget: string }
+              - { label: 詳細リンクの文字, name: link_label, widget: string }
+              - { label: 事業所名（改行可）, name: meta_label, widget: text }
+              - { label: 事業所番号, name: meta_num, widget: string }
+
+      - name: recruit
+        label: 3. 採用
+        file: _data/recruit.yml
+        fields:
+          - { label: 写真, name: image, widget: image }
+          - { label: 写真の説明, name: image_alt, widget: string }
+          - { label: 小見出し（英字）, name: eyebrow, widget: string }
+          - { label: 見出し（改行可）, name: title, widget: text }
+          - { label: 説明文, name: lead, widget: text }
           - label: 勤務時間・休日など
             name: meta
             widget: list

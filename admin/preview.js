@@ -29,14 +29,17 @@
       '<div class="service-grid">' + cards + '</div></div></section>';
   };
   B.recruit = function (d, g, img) {
+    var pts = arr(d.points).map(function (p, i) { return '<div class="point-item"><span class="point-num">' + (i < 9 ? '0' : '') + (i + 1) + '</span><strong>' + esc(p.title) + '</strong><p>' + esc(p.text) + '</p></div>'; }).join('');
+    var roles = arr(d.roles).map(function (r, i) { return '<div class="role-item"><span class="role-item-num">Role ' + (i < 9 ? '0' : '') + (i + 1) + '</span><strong>' + br(r.name) + '</strong><p>' + esc(r.desc) + '</p><span class="role-status">' + esc(r.status) + '</span></div>'; }).join('');
     var meta = arr(d.meta).map(function (m) { return '<div class="recruit-meta-item">' + esc(m.label) + '<strong>' + esc(m.value) + '</strong></div>'; }).join('');
-    var roles = arr(d.roles).map(function (r, i) { return '<div class="role-item"><span class="role-item-num">Role ' + (i < 9 ? '0' : '') + (i + 1) + '</span>' + br(r.name) + '</div>'; }).join('');
     return '<section class="section recruit" id="recruit"><div class="container"><div class="recruit-grid">' +
-      '<div class="recruit-visual reveal"><img src="' + esc(img(d.image)) + '" alt="" style="aspect-ratio: 4/5; object-fit: cover; width: 100%; border-radius: 4px;"></div>' +
-      '<div class="recruit-text reveal"><span class="eyebrow">' + esc(d.eyebrow) + '</span><h2>' + br(d.title) + '</h2><p class="lead">' + esc(d.lead) + '</p>' +
-      '<div class="recruit-meta">' + meta + '</div><div class="recruit-roles">' + roles + '</div>' +
-      '<div class="hero-ctas"><a class="btn btn-primary">' + esc(d.cta1_label) + ' <span class="arrow">→</span></a><a class="btn btn-secondary">' + esc(d.cta2_label) + '</a></div>' +
-      '</div></div></div></section>';
+      '<div class="recruit-text reveal visible"><span class="eyebrow">' + esc(d.eyebrow) + '</span><h2>' + br(d.title) + '</h2><p class="lead">' + esc(d.lead) + '</p>' +
+      '<div class="hero-ctas"><a class="btn btn-primary">' + esc(d.cta1_label) + '<span class="arrow">→</span></a><a class="btn btn-secondary">' + esc(d.cta2_label) + '</a></div></div>' +
+      '<div class="recruit-visual reveal visible"><img src="' + esc(img(d.image)) + '" alt="" style="aspect-ratio: 4/3; object-fit: cover; width: 100%; border-radius: 4px;"></div></div>' +
+      '<div class="recruit-block reveal visible"><h3 class="recruit-h3">' + esc(d.points_title) + '</h3><div class="recruit-points">' + pts + '</div></div>' +
+      '<div class="recruit-block reveal visible"><h3 class="recruit-h3">' + esc(d.roles_title) + '</h3><div class="recruit-roles">' + roles + '</div></div>' +
+      '<div class="recruit-block reveal visible"><h3 class="recruit-h3">' + esc(d.meta_title) + '</h3><div class="recruit-meta">' + meta + '</div><p class="recruit-note">' + esc(d.meta_note) + '</p></div>' +
+      '</div></section>';
   };
   B.access = function (d, g) {
     return '<section class="section access" id="access"><div class="container"><div class="section-head reveal"><span class="eyebrow">' + esc(d.eyebrow) + '</span><h2>' + esc(d.title) + '</h2><p>' + esc(d.lead) + '</p></div>' +

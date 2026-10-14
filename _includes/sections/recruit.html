@@ -3,10 +3,6 @@
   <section class="section recruit" id="recruit">
     <div class="container">
       <div class="recruit-grid">
-        <div class="recruit-visual reveal">
-          <img src="{{ d.image }}" alt="{{ d.image_alt | escape }}" style="aspect-ratio: 4/5; object-fit: cover; width: 100%; border-radius: 4px;">
-        </div>
-
         <div class="recruit-text reveal">
           <span class="eyebrow">{{ d.eyebrow | escape }}</span>
           <h2>
@@ -15,25 +11,6 @@
           <p class="lead">
             {{ d.lead | escape }}
           </p>
-
-          <div class="recruit-meta">
-            {% for m in d.meta %}
-            <div class="recruit-meta-item">
-              {{ m.label | escape }}
-              <strong>{{ m.value | escape }}</strong>
-            </div>
-            {% endfor %}
-          </div>
-
-          <div class="recruit-roles">
-            {% for r in d.roles %}
-            <div class="role-item">
-              <span class="role-item-num">Role {% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
-              {{ r.name | escape | newline_to_br }}
-            </div>
-            {% endfor %}
-          </div>
-
           <div class="hero-ctas">
             <a href="{{ d.cta1_url | escape }}" target="_blank" rel="noopener" class="btn btn-primary">
               {{ d.cta1_label | escape }}
@@ -44,6 +21,49 @@
             </a>
           </div>
         </div>
+        <div class="recruit-visual reveal">
+          <img src="{{ d.image | escape }}" alt="{{ d.image_alt | escape }}" style="aspect-ratio: 4/3; object-fit: cover; width: 100%; border-radius: 4px;">
+        </div>
+      </div>
+
+      <div class="recruit-block reveal">
+        <h3 class="recruit-h3">{{ d.points_title | escape }}</h3>
+        <div class="recruit-points">
+          {% for p in d.points %}
+          <div class="point-item">
+            <span class="point-num">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+            <strong>{{ p.title | escape }}</strong>
+            <p>{{ p.text | escape }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="recruit-block reveal">
+        <h3 class="recruit-h3">{{ d.roles_title | escape }}</h3>
+        <div class="recruit-roles">
+          {% for r in d.roles %}
+          <div class="role-item">
+            <span class="role-item-num">Role {% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+            <strong>{{ r.name | escape | newline_to_br }}</strong>
+            <p>{{ r.desc | escape }}</p>
+            <span class="role-status">{{ r.status | escape }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="recruit-block reveal">
+        <h3 class="recruit-h3">{{ d.meta_title | escape }}</h3>
+        <div class="recruit-meta">
+          {% for m in d.meta %}
+          <div class="recruit-meta-item">
+            {{ m.label | escape }}
+            <strong>{{ m.value | escape }}</strong>
+          </div>
+          {% endfor %}
+        </div>
+        <p class="recruit-note">{{ d.meta_note | escape }}</p>
       </div>
     </div>
   </section>
